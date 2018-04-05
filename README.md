@@ -44,6 +44,7 @@ Launch the Windows instances and set the following based on the BJC:
  * Security Group
  * IAM
  * Enable Auto-assign Public IP
+ 
 Set the following Tags:
  * TTL = 8 (Number in hours)
  * X-Contact = Your Name
@@ -55,6 +56,7 @@ Launch the RHEL instances and set the following based on the BJC:
  * Security Group
  * IAM
  * Enable Auto-assign Public IP
+ 
 Set the following Tags:
  * TTL = 8 (Number in hours)
  * X-Contact = Your Name
@@ -63,22 +65,64 @@ Set the following Tags:
 ## Windows Instructions
 The following instructions will be performed for the Windows Compliance Training
 
-#### windows(windows firewall needs to permit inbound WinRM traffic)
-###### example powershell command to permit WinRM
+#### 1. Windows firewall needs to permit inbound WinRM traffic)
+In Powershell as Administrator, run the following:
 ```bash
 Get-NetFirewallPortFilter | ?{$_.LocalPort -eq 5985 } | Get-NetFirewallRule | ?{ $_.Direction -eq "Inbound" -and $_.Profile -eq "Public" -and $_.Action -eq "Allow"} | Set-NetFirewallRule -RemoteAddress "Any"
 ```
-#### Bootstrap nodes example commands - with knife
-###### Windows - knife bootstrap example
+#### 2. Add the Chef Server and Chef Automate to the Hosts file
+Add the following two lines to  C:\Windows\System32\drivers\etc\hosts
+
 ```bash
-knife bootstrap windows winrm ADDRESS --winrm-user USER --winrm-password 'PASSWORD' --node-name Your_Node_Name --run-list 'recipe[Your_Cookbook_Name]'
+xxx.xxx.xxx.xxx  automate.automate-demo.com
+xxx.xxx.xxx.xxx  chef.automate-demo.com
 ```
 
-#### Kicking off Chef Client runs (or you can schedule with chef-client cookbook)
+#### 3. Bootstrap nodes example commands - with knife
+###### windows (on AWS using public hostname)
+To bootstrap the node, replace the node IP, Password and Node Name and run the following command
+
+```bash
+knife bootstrap windows winrm ec2-xx-xxx-xxx-xxx.us-west-2.compute.amazonaws.com --winrm-user Administrator --winrm-password 'PASSWORD' --node-name Your_Node_Name
+```
+
+#### 4. Manually kicking off Chef Client runs 
 ###### windows (on AWS using public hostname)
 ```bash
-knife winrm 'name:Your_Node_Name' chef-client --winrm-user USER --winrm-password 'PASSWORD' --attribute cloud.public_hostname
+knife winrm 'ec2-xx-xxx-xxx-xxx.us-west-2.compute.amazonaws.com' 'chef-client -c c:/chef/client.rb' -m -x Administrator -P 'PASSWORD'
 ```
+
+#### 5. Use the Scanner to manually audit the Windows node
+
+#### 6. Automatically schedule chef-client runs with the Chef-Client cookbook
+This version of the Chef-Client Cookbook is modified for training purposes and is set to run every 3 mins and 30 seconds.  It should NOT be used for any other purpose.
+```bash
+$ git clone https://github.com/anthonygrees/chef-client.git
+$ cd chef-client
+$ berks init
+$ berks install
+$ berks upload
+```
+
+#### 7. Automatically schedule the CIS Microsoft Windows Server 2012 R2 Benchmark Level 1 - Member Server
+This version of the Audit Cookbook is configured to run the InSpec CIS WIN2012R2 Benchmark.
+
+```bash
+when 'windows'
+    default['audit']['profiles'] = [
+      {
+        name: 'CIS Microsoft Windows Server 2012 R2 Benchmark Level 1 - Member Server',
+        compliance: 'workstation-1/cis-windows2012r2-level1-memberserver',
+      },
+    ]
+```
+https://github.com/anthonygrees/audit_agr
+
+#### 8. Use the Windows 2012 R2 server Hardening Cookbook to fix the CIS errors
+This version has been modified to enable WINRM
+
+https://github.com/anthonygrees/cis-win2012r2-l1-hardening-cookbook
+
 
 ## RHEL Instructions
 The following instructions will be performed for the RHEL Compliance Training

@@ -2,7 +2,7 @@
 
 Instructions for students attending Day 2 training for Compliance on Chef Automate.
 
-# platforms
+## Platforms used:
  * RHEL
  * Windows Server 2012R2
 
@@ -63,26 +63,50 @@ Set the following Tags:
 ## Windows Instructions
 The following instructions will be performed for the Windows Compliance Training
 
-#### Bootstrap nodes example commands - with knife
-###### Linux - knife bootstrap example
-```bash
-knife bootstrap -i Path_to_Identity_file Username@FQDN -N Your_Node_Name --sudo -run-list 'recipe[Your_Cookbook_Name]'
-```
-###### windows(windows firewall needs to permit inbound WinRM traffic)
+#### windows(windows firewall needs to permit inbound WinRM traffic)
 ###### example powershell command to permit WinRM
 ```bash
 Get-NetFirewallPortFilter | ?{$_.LocalPort -eq 5985 } | Get-NetFirewallRule | ?{ $_.Direction -eq "Inbound" -and $_.Profile -eq "Public" -and $_.Action -eq "Allow"} | Set-NetFirewallRule -RemoteAddress "Any"
 ```
+#### Bootstrap nodes example commands - with knife
 ###### Windows - knife bootstrap example
 ```bash
 knife bootstrap windows winrm ADDRESS --winrm-user USER --winrm-password 'PASSWORD' --node-name Your_Node_Name --run-list 'recipe[Your_Cookbook_Name]'
+```
+
+#### Kicking off Chef Client runs (or you can schedule with chef-client cookbook)
+###### windows (on AWS using public hostname)
+```bash
+knife winrm 'name:Your_Node_Name' chef-client --winrm-user USER --winrm-password 'PASSWORD' --attribute cloud.public_hostname
+```
+
+## RHEL Instructions
+The following instructions will be performed for the RHEL Compliance Training
+
+#### Bootstrap nodes example commands - with knife
+###### Linux - knife bootstrap example
+```bash
+knife bootstrap -i Path_to_Identity_file Username@FQDN -N Your_Node_Name --sudo -run-list 'recipe[Your_Cookbook_Name]'
 ```
 #### Kicking off Chef Client runs (or you can schedule with chef-client cookbook)
 ###### Linux (on AWS using public hostname)
 ```bash
 knife ssh 'name:Your_Node_Name' 'sudo chef-client' -x Username -i Path_to_Identity_file -a ec2.public_hostname
 ```
-###### windows (on AWS using public hostname)
-```bash
-knife winrm 'name:Your_Node_Name' chef-client --winrm-user USER --winrm-password 'PASSWORD' --attribute cloud.public_hostname
-```
+
+
+## License and Author
+
+* Author:: Anthony Rees <anthony@chef.io>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

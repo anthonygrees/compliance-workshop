@@ -127,11 +127,28 @@ when 'windows'
     ]
 ```
 https://github.com/anthonygrees/audit_agr
+```bash
+$ git https://github.com/anthonygrees/audit_agr
+$ cd audit_agr
+$ berks init
+$ berks install
+$ berks upload
+```
 
 #### 8. Use the Windows 2012 R2 server Hardening Cookbook to fix the CIS errors
 This version has been modified to enable WINRM
 
+``bash
+$ git https://github.com/anthonygrees/cis-win2012r2-l1-hardening-cookbook
+$ cd cis-win2012r2-l1-hardening-cookbook
+$ berks init
+$ berks install
+$ berks upload
+```
 https://github.com/anthonygrees/cis-win2012r2-l1-hardening-cookbook
+
+Now wait for the Audit Profile to run :)
+
 
 
 ## RHEL Instructions

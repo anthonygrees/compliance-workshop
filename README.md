@@ -141,11 +141,11 @@ $ passwd root
 #### 2. Add Chef Server and Chef Automate to the Hosts file
 Chef Automate - Add to /etc/hosts
 ```bash
-ssh -i your_key.pem ec2-user@RHEL_IP 'echo “Automate_IP automate.automate-demo.com" | sudo tee --append /etc/hosts’
+ssh -i your_key.pem ec2-user@RHEL_IP 'echo "Automate_IP automate.automate-demo.com" | sudo tee --append /etc/hosts'
 ```
 Chef Server - Add to /etc/hosts
 ```bash
-ssh -i your_key.pem ec2-user@RHEL_IP 'echo “Server_IP chef.automate-demo.com" | sudo tee --append /etc/hosts’
+ssh -i your_key.pem ec2-user@RHEL_IP 'echo "Server_IP chef.automate-demo.com" | sudo tee --append /etc/hosts'
 ```
 
 #### 3. Bootstrap nodes example commands - with knife

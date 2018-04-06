@@ -27,6 +27,10 @@ You'll need to increase the max size on the Chef Server if you're using larger c
 Sample: /etc/opscode/chef-server.rb
 
 ```bash
+$ sudo vi /etc/opscode/chef-server.rb
+```
+Add the following lines
+```bash
 opscode_erchef['max_request_size'] = '1500000'
 nginx['client_max_body_size'] = '2500m'
 ```
@@ -127,12 +131,29 @@ https://github.com/anthonygrees/cis-win2012r2-l1-hardening-cookbook
 ## RHEL Instructions
 The following instructions will be performed for the RHEL Compliance Training
 
-#### Bootstrap nodes example commands - with knife
+#### 1. Create a password for students to use
+
+```bash
+$ sudo su
+$ passwd root
+```
+
+#### 2. Add Chef Server and Chef Automate to the Hosts file
+Chef Automate - Add to /etc/hosts
+```bash
+ssh -i your_key.pem ec2-user@RHEL_IP 'echo “Automate_IP automate.automate-demo.com" | sudo tee --append /etc/hosts’
+```
+Chef Server - Add to /etc/hosts
+```bash
+ssh -i your_key.pem ec2-user@RHEL_IP 'echo “Server_IP chef.automate-demo.com" | sudo tee --append /etc/hosts’
+```
+
+#### 3. Bootstrap nodes example commands - with knife
 ###### Linux - knife bootstrap example
 ```bash
 knife bootstrap -i Path_to_Identity_file Username@FQDN -N Your_Node_Name --sudo -run-list 'recipe[Your_Cookbook_Name]'
 ```
-#### Kicking off Chef Client runs (or you can schedule with chef-client cookbook)
+#### 4. Kicking off Chef Client runs (or you can schedule with chef-client cookbook)
 ###### Linux (on AWS using public hostname)
 ```bash
 knife ssh 'name:Your_Node_Name' 'sudo chef-client' -x Username -i Path_to_Identity_file -a ec2.public_hostname

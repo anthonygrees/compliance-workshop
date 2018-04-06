@@ -128,7 +128,7 @@ when 'windows'
 ```
 https://github.com/anthonygrees/audit_agr
 ```bash
-$ git https://github.com/anthonygrees/audit_agr
+$ git clone https://github.com/anthonygrees/audit_agr
 $ cd audit_agr
 $ berks init
 $ berks install
@@ -139,7 +139,7 @@ $ berks upload
 This version has been modified to enable WINRM
 
 ```bash
-$ git https://github.com/anthonygrees/cis-win2012r2-l1-hardening-cookbook
+$ git clone https://github.com/anthonygrees/cis-win2012r2-l1-hardening-cookbook
 $ cd cis-win2012r2-l1-hardening-cookbook
 $ berks init
 $ berks install
@@ -216,7 +216,7 @@ when 'redhat'
 ```
 https://github.com/anthonygrees/audit_agr
 ```bash
-$ git https://github.com/anthonygrees/audit_agr
+$ git clone https://github.com/anthonygrees/audit_agr
 $ cd audit_agr
 $ berks init
 $ berks install
@@ -225,7 +225,7 @@ $ berks upload
 #### 7. Harden the RHEL instance with the Hardening Cookbook
 
 ```bash
-$ git https://github.com/chef/cis-rhel
+$ git clone https://github.com/chef/cis-rhel
 $ cd cis-rhel
 $ berks init
 $ berks install

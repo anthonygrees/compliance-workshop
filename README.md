@@ -3,8 +3,9 @@
 Instructions for students attending Day 2 training for Compliance on Chef Automate.
 
 ## Platforms used:
- * RHEL
+ * RHEL 7
  * Windows Server 2012R2
+ * CentOS 7
 
 ## Prerequisites:
 #### Create a Chef BJC Training Environment
@@ -51,6 +52,7 @@ Launch the Windows instances and set the following based on the BJC:
  
 Set the following Tags:
  * TTL = 8 (Number in hours)
+ * X-TTL = 8 (Number in hours)
  * X-Contact = Your Name
  * X-Termination-Date = (get from a BJC instance)
  
@@ -66,7 +68,7 @@ Set the following Tags:
   </powershell>
   ```
 
-#### 5. Launch the required number of RHEL Servers
+#### 5. Launch the required number of RHEL and / or CentOS Servers
 Launch the RHEL instances and set the following based on the BJC:
  * VPC
  * Security Group
@@ -75,6 +77,7 @@ Launch the RHEL instances and set the following based on the BJC:
  
 Set the following Tags:
  * TTL = 8 (Number in hours)
+ * X-TTL = 8 (Number in hours)
  * X-Contact = Your Name
  * X-Termination-Date = (get from a BJC instance)
  

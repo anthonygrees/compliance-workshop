@@ -107,6 +107,11 @@ To bootstrap the node, replace the node IP, Password and Node Name and run the f
 ```bash
 knife bootstrap windows winrm ec2-xx-xxx-xxx-xxx.us-west-2.compute.amazonaws.com --winrm-user Administrator --winrm-password 'PASSWORD' --node-name Your_Node_Name
 ```
+If you need to change your Windows password, RDP onto the Windows instance and run the following command in Powershell as Administrator
+
+```bash
+net user Administrator "new_password"
+```
 
 #### 3. Automatically schedule chef-client runs with the Chef-Client cookbook
 This version of the Chef-Client Cookbook is modified for training purposes and is set to run every 3 mins and 30 seconds.  It should NOT be used for any other purpose.

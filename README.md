@@ -18,6 +18,7 @@ Be sure to take note of the following:
 ## Setup Instructions
 Follow this link to setup the environment and configure Chef Automate
 
+https://github.com/anthonygrees/compliance-workshop/blob/master/setup.md
 
 
 ## Windows Instructions

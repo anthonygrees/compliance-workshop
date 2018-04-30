@@ -90,6 +90,7 @@ Set the following Tags:
  ```
 
 ## Windows Instructions
+https://github.com/anthonygrees/compliance-workshop/edit/master/windows.md
 The following instructions will be performed for the Windows Compliance Training
 
 #### 1. Manually Scan the Windows node

@@ -20,6 +20,10 @@ Follow this link to setup the environment and configure Chef Automate
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/setup.md
 
+## Learn InSpec on the Windows BJC workstation
+Follow this link for Inspec examples that can run on the BJC Windows workstation
+
+https://github.com/anthonygrees/compliance-workshop/blob/master/windows_inspec.md
 
 ## Windows Instructions
 Follow this link to the Windows instructions:

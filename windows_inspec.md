@@ -55,3 +55,60 @@ control 'WINDOWS HOTFIX - LOOP' do
   end
 end
 ```
+
+Is a particular package installed ?
+
+```bash
+control 'PACKAGE INSTALLED _ TELNET' do
+  impact 0.8
+  title 'This test checks that a package is installed'
+
+  describe package('telnetd') do
+    it { should_not be_installed }
+  end
+end
+```
+
+Is a particular Service installed ?
+
+```bash
+## service example
+control 'SERVICE INSTALLED' do
+  impact 0.8
+  title 'This test checks the service is installed'
+
+  describe service('DHCP Client') do
+    it { should be_installed }
+    it { should be_running }
+  end
+end
+```
+
+
+Compliance of the OS settings on the windows client
+- Check and verify Group Policy Settings (GPO) with reference to CIS Windows 10 1703 benchmark is begin applied
+- When new monthly windows security patch is applied to the current image, to check if the new patches is successfully applied. Where possible, show the status BEFORE and AFTER the patch for comparison and highlight any errors etc..
+
+
+```bash
+control "xccdf_org.cisecurity.benchmarks_rule_18.8.18.3_L1_Ensure_Configure_registry_policy_processing_Process_even_if_the_Group_Policy_objects_have_not_changed_is_set_to_Enabled_TRUE" do
+  title "(L1) Ensure 'Configure registry policy processing: Process even if the Group Policy objects have not changed' is set to 'Enabled: TRUE'"
+  desc  "The \"Process even if the Group Policy objects have not changed\" option updates and reapplies policies even if the policies have not changed."
+  impact 1.0
+  describe registry_key("HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\Group Policy\\{35378EAC-683F-11D2-A89A-00C04FBBCFA2}") do
+    it { should_not have_property "NoGPOListChanges" }
+  end
+  describe registry_key("HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\Group Policy\\{35378EAC-683F-11D2-A89A-00C04FBBCFA2}") do
+    its("NoGPOListChanges") { should_not cmp == 0 }
+  end
+end
+
+control "xccdf_org.cisecurity.benchmarks_rule_18.8.18.4_L1_Ensure_Turn_off_background_refresh_of_Group_Policy_is_set_to_Disabled" do
+  title "(L1) Ensure 'Turn off background refresh of Group Policy' is set to 'Disabled'"
+  desc  "This policy setting prevents Group Policy from being updated while the computer is in use."
+  impact 1.0
+  describe registry_key("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System") do
+    it { should_not have_property "DisableBkGndGroupPolicy" }
+  end
+end
+```

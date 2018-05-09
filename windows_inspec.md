@@ -5,6 +5,19 @@ Create a file called audit.rb
 code audit.rb
 ```
 
+Otherwise, to create a new InSpec Profile run the following:
+```bash
+## Create a New InSpec Profile
+$ inspec init profile <your_profile_name>
+
+## Change Directory into your new Profile
+$ cd <your_profile_name>
+
+## Write your Controls in the example.rb
+$ code controls\example.rb
+```
+
+
 Now add the following to the audit.rb file
 
 ```bash
@@ -56,6 +69,12 @@ control 'WINDOWS HOTFIX - LOOP' do
 end
 ```
 
+To execute this using InSpec, run the following command
+
+```bash
+inspec exec audit.rb
+```
+
 Is a particular package installed ?
 
 ```bash
@@ -84,6 +103,57 @@ control 'SERVICE INSTALLED' do
 end
 ```
 
+To execute this using InSpec, run the following command
+
+```bash
+inspec exec audit.rb
+```
+Use the InSpec Port resource to test HTTP and HTTPS
+
+```bash
+# Test HTTP port 80, is not listening and no protocol TCP, ICMP, UDP
+describe port(80) do
+    it { should_not be_listening }
+    its('protocols') { should_not cmp 'tcp6' }
+    its('protocols') { should_not include('icmp') }
+    its('protocols') { should_not include('tcp') }
+    its('protocols') { should_not include('udp') }
+    its('protocols') { should_not include('udp6') }
+    its('addresses') { should_not include '0.0.0.0' }
+end
+
+# Test HTTPS port 443, listening with TCP and UDP
+describe port(443) do
+    it { should be_listening }
+    its('protocols') { should_not cmp 'tcp6' }
+    its('protocols') { should_not include('icmp') }
+    its('protocols') { should include('tcp') }
+    its('protocols') { should include('udp') }
+    its('protocols') { should_not include('udp6') }
+    its('addresses') { should include '0.0.0.0' }
+end
+```
+
+To execute this using InSpec, run the following command
+
+```bash
+inspec exec audit.rb
+```
+
+Use the http InSpec audit resource to test an http endpoint.
+
+```bash
+describe http('https://automate.automate-demo.com/ping',
+              auth: {user: 'user', pass: 'test'},
+              params: {format: 'html'},
+              method: 'POST',
+              headers: {'Content-Type' => 'application/json'},
+              data: '{"data":{"a":"1","b":"five"}}') do
+  its('status') { should cmp 200 }
+  its('body') { should cmp 'pong' }
+  its('headers.Content-Type') { should cmp 'text/html' }
+end
+```
 
 Compliance of the OS settings on the windows client
 - Check and verify Group Policy Settings (GPO) with reference to CIS Windows 10 1703 benchmark is begin applied
@@ -111,4 +181,10 @@ control "xccdf_org.cisecurity.benchmarks_rule_18.8.18.4_L1_Ensure_Turn_off_backg
     it { should_not have_property "DisableBkGndGroupPolicy" }
   end
 end
+```
+
+To execute this using InSpec, run the following command
+
+```bash
+inspec exec audit.rb
 ```

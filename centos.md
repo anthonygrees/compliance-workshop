@@ -2,6 +2,16 @@
 
 The following instructions will be performed for the CentOS Compliance Training
 
+## *** Agent-less Scan ***
+#### 1. Use Kitchen to stand up and Bootstrap an Instance
+```bash
+$ git clone https://github.com/anthonygrees/bjc_linux_bootstrap
+
+$ cd bjc_linux_bootstrap
+
+$ kitchen create  ## Only run create
+```
+
 #### 1. Manually Scan the CentOS node
 
 Use the Chef Automate Scanner to scan your node
@@ -9,7 +19,7 @@ Use the Chef Automate Scanner to scan your node
  * Add your Node
  * Add your job
 
-#### *** Automatically Scan and Harden ***
+## *** Automatically Scan and Harden ***
 
 #### 1. Use Kitchen to stand up and Bootstrap an Instance
 ```bash
@@ -17,9 +27,10 @@ $ git clone https://github.com/anthonygrees/bjc_linux_bootstrap
 
 $ cd bjc_linux_bootstrap
 
-$ kitchen create
+$ kitchen converge
 ```
 
+## *** The Manual Commands incase your interested !  :) ***
 #### 2. Bootstrap nodes example commands - with knife
 ###### Linux - knife bootstrap example (on AWS using public hostname)
 ```bash
@@ -43,9 +54,10 @@ This will set the Chef Client to run every 3 min and 30 secs
 
 ```bash
 knife ssh 'name:Your_Node_Name' 'sudo chef-client' -x centos -i workshop.pem
-```
 
-#### 5. Automatically schedule the CCIS CentOS Linux 7 Benchmark Level 1
+```
+## Auto InSpec Scan with Audit Cookbook
+#### 5. Automatically schedule the CIS CentOS Linux 7 Benchmark Level 1
 This version of the Audit Cookbook is configured to run the InSpec CIS WIN2012R2 Benchmark.
 
 ```bash
@@ -70,6 +82,7 @@ $ berks init
 $ berks install
 $ berks upload
 ```
+## Harden the Node
 #### 6. Harden the CentOS instance with the Hardening Cookbook
 
 ```bash

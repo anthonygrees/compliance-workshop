@@ -11,6 +11,15 @@ Use the Chef Automate Scanner to scan your node
 
 #### *** Automatically Scan and Harden ***
 
+#### 1. Use Kitchen to stand up and Bootstrap an Instance
+```bash
+$ git clone https://github.com/anthonygrees/bjc_linux_bootstrap
+
+$ cd bjc_linux_bootstrap
+
+$ kitchen create
+```
+
 #### 2. Bootstrap nodes example commands - with knife
 ###### Linux - knife bootstrap example (on AWS using public hostname)
 ```bash

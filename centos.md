@@ -34,7 +34,7 @@ $ kitchen converge
 #### 2. Bootstrap nodes example commands - with knife
 ###### Linux - knife bootstrap example (on AWS using public hostname)
 ```bash
-knife bootstrap -i workshop.pem centos@ec2-XX-XXX-XXX-XXX.us-west-2.compute.amazonaws.com -N Your_Node_Name --sudo -run-list 'recipe[Your_Cookbook_Name]'
+knife bootstrap -i ~\.ssh\id_rsa centos@ec2-XX-XXX-XXX-XXX.us-west-2.compute.amazonaws.com -N Your_Node_Name --sudo -run-list 'recipe[Your_Cookbook_Name]'
 ```
 
 #### 3. Automatically schedule chef-client runs with the Chef-Client cookbook
@@ -53,7 +53,7 @@ $ berks upload
 This will set the Chef Client to run every 3 min and 30 secs
 
 ```bash
-knife ssh 'name:Your_Node_Name' 'sudo chef-client' -x centos -i workshop.pem
+knife ssh 'name:Your_Node_Name' 'sudo chef-client' -x centos -i ~\.ssh\id_rsa
 
 ```
 ## Auto InSpec Scan with Audit Cookbook

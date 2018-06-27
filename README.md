@@ -1,4 +1,4 @@
-# Day 2 or 3 - Chef compliance-workshop Training
+# Chef compliance-workshop Training
 
 Instructions for students attending Day 2 training for Compliance on Chef Automate.
 

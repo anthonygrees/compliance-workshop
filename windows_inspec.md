@@ -1,11 +1,12 @@
 ## InSpec on Windows
 
-Create a file called audit.rb
+### Step 1: Check your InSpec Version
 ```bash
-code audit.rb
+$ inspec --version
 ```
 
-Otherwise, to create a new InSpec Profile run the following:
+### Step 2: Create a new InSpec profile
+Create a new InSpec Profile run the following:
 ```bash
 ## Create a New InSpec Profile
 $ inspec init profile <your_profile_name>
@@ -17,7 +18,7 @@ $ cd <your_profile_name>
 $ code controls\example.rb
 ```
 
-
+### Step 3: Create a simple Windows Version check
 Now add the following to the audit.rb file
 
 ```bash
@@ -46,9 +47,10 @@ end
 To execute this using InSpec, run the following command
 
 ```bash
-inspec exec audit.rb
+$ inspec exec .
 ```
 
+### Step 4: Check Windows Hot Fixes
 Add the following example for looping through Windows KB and Hotfixes
 
 ```bash
@@ -72,9 +74,10 @@ end
 To execute this using InSpec, run the following command
 
 ```bash
-inspec exec audit.rb
+$ inspec exec .
 ```
 
+# Step 5: Check if a package is installed
 Is a particular package installed ?
 
 ```bash
@@ -86,6 +89,12 @@ control 'PACKAGE INSTALLED _ TELNET' do
     it { should_not be_installed }
   end
 end
+```
+
+To execute this using InSpec, run the following command
+
+```bash
+$ inspec exec .
 ```
 
 Is a particular Service installed ?

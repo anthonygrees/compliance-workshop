@@ -224,7 +224,7 @@ $ inspec exec audit.rb
 ## Step 10: Report in Chef Automate
 Create a file called ```inspec.json``` in <your_profile_name> directory and add the following:
 
-```bash
+```json
 {
     "reporter" : {
         "automate" : {

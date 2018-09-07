@@ -7,7 +7,6 @@ Don't have InSpec installed ?  Here you go - https://downloads.chef.io/inspec
 $ inspec --version
 ```
 ![InSpec Version](/images/1inspecversion.png)
-Format: ![Alt Text](url)
 
 ### Step 2: Create a new InSpec profile
 Create a new InSpec Profile run the following:
@@ -21,6 +20,7 @@ $ cd <your_profile_name>
 ## Write your Controls in the example.rb
 $ code controls\example.rb
 ```
+![Create Profile](/images/2createprofile.png)
 
 ### Step 3: Create a simple Windows Version check
 Now add the following to the audit.rb file

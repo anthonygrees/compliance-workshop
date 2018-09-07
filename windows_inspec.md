@@ -6,6 +6,8 @@ Don't have InSpec installed ?  Here you go - https://downloads.chef.io/inspec
 ```bash
 $ inspec --version
 ```
+![InSpec Version](/images/1inspecversion.png)
+Format: ![Alt Text](url)
 
 ### Step 2: Create a new InSpec profile
 Create a new InSpec Profile run the following:

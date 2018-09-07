@@ -224,7 +224,7 @@ $ inspec exec audit.rb
 ## Step 10: Report in Chef Automate
 Create a file called ```inspec.json``` in <your_profile_name> directory and add the following:
 
-Note: Remember to update the ```json``` and put your name in ```"node_name" : "<YOU_NAME_HERE>"```
+Note: Remember to update the ```json``` and put your name in ```"node_name" : "<YOUR_NAME_HERE>"```
 
 ```json
 {
@@ -234,7 +234,7 @@ Note: Remember to update the ```json``` and put your name in ```"node_name" : "<
             "url" : "https://automate.automate-demo.com/data-collector/v0",
             "token" : "Ap37TgMRThzpEDjHiBXt2sJ5Ra4=",
             "insecure" : true,
-            "node_name" : "<YOU_NAME_HERE>",
+            "node_name" : "<YOUR_NAME_HERE>",
             "environment" : "dev"
         }
     }

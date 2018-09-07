@@ -170,23 +170,27 @@ $ inspec exec audit.rb
 ```
 ![Windows Version](/images/7http.png)
 
-### Step 8: Check an HTTPS endpoint
+### Step 8: Check Windows Tasks
 Use the http InSpec audit resource to test an http endpoint.
 
 ```bash
-control 'HTTP ENDPOINT' do
+control 'WINDOWS TASKS' do
   impact 0.8
-  title 'This test checks the HTTP and HTTPS protocols'
+  title 'This test checks the Windows Tasks'
   
-  describe http('https://automate.automate-demo.com/ping',
-                auth: {user: 'user', pass: 'test'},
-                params: {format: 'html'},
-                method: 'POST',
-                headers: {'Content-Type' => 'application/json'},
-                data: '{"data":{"a":"1","b":"five"}}') do
-    its('status') { should cmp 200 }
-    its('body') { should cmp 'pong' }
-    its('headers.Content-Type') { should cmp 'text/html' }
+  describe windows_task('\Microsoft\Windows\AppID\PolicyConverter') do
+    it { should be_disabled }
+  end
+
+  describe windows_task('\Microsoft\Windows\AppID\PolicyConverter') do
+    its('logon_mode') { should eq 'Interactive/Background' }
+    its('last_result') { should eq '267011' }
+    its('task_to_run') { should cmp '%Windir%\system32\appidpolicyconverter.exe' }
+    its('run_as_user') { should eq 'SYSTEM' }
+  end
+
+  describe windows_task('\Microsoft\Windows\Defrag\ScheduledDefrag') do
+    it { should exist }
   end
 end
 ```
@@ -196,6 +200,7 @@ To execute this using InSpec, run the following command
 ```bash
 $ inspec exec audit.rb
 ```
+![Windows Version](/images/8task.png)
 
 ### Step 9: CIS Example Profile
 Compliance of the OS settings on the windows client

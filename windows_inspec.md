@@ -171,7 +171,7 @@ $ inspec exec audit.rb
 ![Windows Version](/images/7http.png)
 
 ### Step 8: Check Windows Tasks
-Use the http InSpec audit resource to test an http endpoint.
+Use the windows_task InSpec resource to check the state of tasks.
 
 ```bash
 control 'WINDOWS TASKS' do

@@ -23,7 +23,7 @@ $ code controls\example.rb
 ![Create Profile](/images/2createprofile.png)
 
 ### Step 3: Create a simple Windows Version check
-Now add the following to the audit.rb file
+Now add the following to the example.rb file
 
 ```bash
 # Windows Versions - Check for Min of Win 2012
@@ -53,6 +53,7 @@ To execute this using InSpec, run the following command
 ```bash
 $ inspec exec .
 ```
+![Windows Version](/images/3version.png)
 
 ### Step 4: Check Windows Hot Fixes
 Add the following example for looping through Windows KB and Hotfixes

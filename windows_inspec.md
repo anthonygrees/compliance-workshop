@@ -1,5 +1,7 @@
 ## InSpec on Windows
 
+Don't have InSpec installed ?  Here you go - https://downloads.chef.io/inspec
+
 ### Step 1: Check your InSpec Version
 ```bash
 $ inspec --version
@@ -218,3 +220,29 @@ To execute this using InSpec, run the following command
 ```bash
 $ inspec exec audit.rb
 ```
+
+## Step 10: Report in Chef Automate
+Create a file called ```inspec.json``` in <your_profile_name> directory and add the following:
+
+```bash
+{
+    "reporter" : {
+        "automate" : {
+            "stdout" : "false",
+            "url" : "https://automate.automate-demo.com/data-collector/v0",
+            "token" : "Ap37TgMRThzpEDjHiBXt2sJ5Ra4=",
+            "insecure" : true,
+            "node_name" : "<YOU_NAME_HERE>",
+            "environment" : "dev"
+        }
+    }
+}
+```
+
+To execute this using InSpec and report to A2 run the following command
+
+```bash
+$  inspec exec . --json-config inspec.json
+```
+
+

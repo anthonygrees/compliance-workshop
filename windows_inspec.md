@@ -39,11 +39,11 @@ control 'WINDOWS VERSION' do
   end
 
   describe os.name do
-    it { should eq 'windows_server_2012_r2_standard_evaluation' }
+    it { should eq 'windows_server_2016_datacenter' }
   end
 
   describe os.release do
-    it { should > '6.2' }
+    it { should > '10.0' }
   end
 end
 ```

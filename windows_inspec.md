@@ -129,6 +129,7 @@ To execute this using InSpec, run the following command
 ```bash
 $ inspec exec audit.rb
 ```
+![Windows Version](/images/6service.png)
 
 ### Step 7: Checking HTTP and HTTPS
 Use the InSpec Port resource to test HTTP and HTTPS
@@ -167,6 +168,7 @@ To execute this using InSpec, run the following command
 ```bash
 $ inspec exec audit.rb
 ```
+![Windows Version](/images/7http.png)
 
 ### Step 8: Check an HTTPS endpoint
 Use the http InSpec audit resource to test an http endpoint.
@@ -229,6 +231,7 @@ To execute this using InSpec, run the following command
 ```bash
 $ inspec exec audit.rb
 ```
+![Windows Version](/images/9cis.png)
 
 ## Step 10: Report in Chef Automate
 Create a file called ```inspec.json``` in <your_profile_name> directory and add the following:

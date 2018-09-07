@@ -97,6 +97,7 @@ To execute this using InSpec, run the following command
 $ inspec exec .
 ```
 
+### Step 6: Check if a Windows Service installed and Enabled
 Is a particular Service installed ?
 
 ```bash
@@ -115,55 +116,75 @@ end
 To execute this using InSpec, run the following command
 
 ```bash
-inspec exec audit.rb
+$ inspec exec audit.rb
 ```
+
+### Step 7: Checking HTTP and HTTPS
 Use the InSpec Port resource to test HTTP and HTTPS
 
 ```bash
-# Test HTTP port 80, is not listening and no protocol TCP, ICMP, UDP
-describe port(80) do
-    it { should_not be_listening }
-    its('protocols') { should_not cmp 'tcp6' }
-    its('protocols') { should_not include('icmp') }
-    its('protocols') { should_not include('tcp') }
-    its('protocols') { should_not include('udp') }
-    its('protocols') { should_not include('udp6') }
-    its('addresses') { should_not include '0.0.0.0' }
-end
+control 'HTTP AND HTTPS' do
+  impact 0.8
+  title 'This test checks the HTTP and HTTPS protocols'
+  
+  # Test HTTP port 80, is not listening and no protocol TCP, ICMP, UDP
+  describe port(80) do
+      it { should_not be_listening }
+      its('protocols') { should_not cmp 'tcp6' }
+      its('protocols') { should_not include('icmp') }
+      its('protocols') { should_not include('tcp') }
+      its('protocols') { should_not include('udp') }
+      its('protocols') { should_not include('udp6') }
+      its('addresses') { should_not include '0.0.0.0' }
+  end
 
-# Test HTTPS port 443, listening with TCP and UDP
-describe port(443) do
-    it { should be_listening }
-    its('protocols') { should_not cmp 'tcp6' }
-    its('protocols') { should_not include('icmp') }
-    its('protocols') { should include('tcp') }
-    its('protocols') { should include('udp') }
-    its('protocols') { should_not include('udp6') }
-    its('addresses') { should include '0.0.0.0' }
+  # Test HTTPS port 443, listening with TCP and UDP
+  describe port(443) do
+      it { should be_listening }
+      its('protocols') { should_not cmp 'tcp6' }
+      its('protocols') { should_not include('icmp') }
+      its('protocols') { should include('tcp') }
+      its('protocols') { should include('udp') }
+      its('protocols') { should_not include('udp6') }
+      its('addresses') { should include '0.0.0.0' }
+  end
 end
 ```
 
 To execute this using InSpec, run the following command
 
 ```bash
-inspec exec audit.rb
+$ inspec exec audit.rb
 ```
 
+### Step 8: Check an HTTPS endpoint
 Use the http InSpec audit resource to test an http endpoint.
 
 ```bash
-describe http('https://automate.automate-demo.com/ping',
-              auth: {user: 'user', pass: 'test'},
-              params: {format: 'html'},
-              method: 'POST',
-              headers: {'Content-Type' => 'application/json'},
-              data: '{"data":{"a":"1","b":"five"}}') do
-  its('status') { should cmp 200 }
-  its('body') { should cmp 'pong' }
-  its('headers.Content-Type') { should cmp 'text/html' }
+control 'HTTP ENDPOINT' do
+  impact 0.8
+  title 'This test checks the HTTP and HTTPS protocols'
+  
+  describe http('https://automate.automate-demo.com/ping',
+                auth: {user: 'user', pass: 'test'},
+                params: {format: 'html'},
+                method: 'POST',
+                headers: {'Content-Type' => 'application/json'},
+                data: '{"data":{"a":"1","b":"five"}}') do
+    its('status') { should cmp 200 }
+    its('body') { should cmp 'pong' }
+    its('headers.Content-Type') { should cmp 'text/html' }
+  end
 end
 ```
 
+To execute this using InSpec, run the following command
+
+```bash
+$ inspec exec audit.rb
+```
+
+### Step 9: CIS Example Profile
 Compliance of the OS settings on the windows client
 - Check and verify Group Policy Settings (GPO) with reference to CIS Windows 10 1703 benchmark is begin applied
 - When new monthly windows security patch is applied to the current image, to check if the new patches is successfully applied. Where possible, show the status BEFORE and AFTER the patch for comparison and highlight any errors etc..
@@ -195,5 +216,5 @@ end
 To execute this using InSpec, run the following command
 
 ```bash
-inspec exec audit.rb
+$ inspec exec audit.rb
 ```

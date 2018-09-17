@@ -1,3 +1,16 @@
+## Platforms used:
+ * RHEL 7
+ * Windows Server 2012R2
+ * CentOS 7
+
+## Prerequisites:
+#### Create a Chef BJC Training Environment
+Be sure to take note of the following:
+ * VPC
+ * Subnet
+ * Automate IP Address
+ * Chef Server IP Address
+ 
 ## Setup Instructions
 #### 1.Login to Chef Automate and download any needed profiles
  * DevSec Linux Security Baseline

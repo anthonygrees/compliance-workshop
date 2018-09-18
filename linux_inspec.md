@@ -30,14 +30,14 @@ inspec> sshd_config.Protocol
 inspec> help matchers
 ```
 
-```bash
+```ruby
 inspec> describe sshd_config do
 inspec> its('Protocol') { should eq '2' }
 inspec> end
 ```
 
 ### Step 5: Check for insecure protocol
-```bash
+```ruby
 # Disallow insecure protocols by testing
 
 describe package('telnetd') do

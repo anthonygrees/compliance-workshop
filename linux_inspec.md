@@ -8,7 +8,35 @@ Don't have InSpec installed ?  Here you go - https://downloads.chef.io/inspec
 $ inspec --version
 ```
 
-### Step 2: Check for insecure protocol
+### Step 2: Determine your platform
+```bash
+inspec detect -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+```
+
+### Step 4: Let's look at InSpec Shell
+It's a pry based Read–Eval–Print Loop that can be used to quickly run InSpec controls and tests without having to write it to a file. Its functionality is similar to chef shell.
+
+We'll start by connecting to the shell with our key and transport information, and then play around in the shell for a bit and write our first test.
+```bash
+$ inspec help shell
+$ inspec detect -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+
+inspec> help
+inspec> help resources
+inspec> help sshd_config
+inspec> sshd_config.params
+inspec> sshd_config.port
+inspec> sshd_config.Protocol
+inspec> help matchers
+```
+
+```bash
+inspec> describe sshd_config do
+inspec> its('Protocol') { should eq '2' }
+inspec> end
+```
+
+### Step 5: Check for insecure protocol
 ```bash
 # Disallow insecure protocols by testing
 

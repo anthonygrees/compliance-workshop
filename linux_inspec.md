@@ -36,6 +36,10 @@ inspec> its('Protocol') { should eq '2' }
 inspec> end
 ```
 
+```ruby
+inspec> exit
+```
+
 ### Step 5: Check for insecure protocol
 ```ruby
 # Disallow insecure protocols by testing

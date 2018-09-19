@@ -84,7 +84,7 @@ $ inspec exec .
 ```
 ![Windows Version](/images/4kb.png)
 
-# Step 5: Check if a package is installed
+### Step 5: Check if a package is installed
 Is a particular package installed ?
 
 ```bash

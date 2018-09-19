@@ -66,7 +66,7 @@ end
 InSpec makes it easy to run your tests wherever you need.
 ```bash
 # run test on remote host on SSH
-inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+$ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
 ```
 
 ### Step 6: Ensure telnet server is not enabled
@@ -88,9 +88,35 @@ end
 You can run your test with the following command
 ```bash
 # run test on remote host on SSH
-inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+$ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
 ```
-### Step 7: Ensure FTP Server is not enabled
+### Step 7: Report in Chef Automate
+Create a file called ```inspec.json``` in <your_profile_name> directory and add the following:
+
+Note: Remember to update the ```json``` and put your name in ```"node_name" : "<YOUR_NAME_HERE>"``` and add your ```TOKEN``` from the spreadsheet.
+
+```json
+{
+    "reporter" : {
+        "automate" : {
+            "stdout" : "false",
+            "url" : "https://automate.automate-demo.com/data-collector/v0",
+            "token" : "<ADD_THE_TOKEN_HERE_FROM_THE_SPREADSHEET>",
+            "insecure" : true,
+            "node_name" : "<YOUR_NAME_HERE>",
+            "environment" : "dev"
+        }
+    }
+}
+```
+
+To execute this using InSpec and report to A2 run the following command
+
+```bash
+$ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
+```
+
+### Step 8: Ensure FTP Server is not enabled
 
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_6.9_Ensure_FTP_Server_is_not_enabled" do
@@ -109,10 +135,10 @@ end
 You can run your test with the following command
 ```bash
 # run test on remote host on SSH
-inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+$ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
 
-### Step 8: Ensure shadow group is empty
+### Step 9: Ensure shadow group is empty
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_13.20_Ensure_shadow_group_is_empty" do
   title "Ensure shadow group is empty"
@@ -133,10 +159,10 @@ end
 You can run your test with the following command
 ```bash
 # run test on remote host on SSH
-inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+$ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
 
-### Step 9: Ensure tftp-server is not enabled
+### Step 10: Ensure tftp-server is not enabled
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_5.1.7_Ensure_tftp-server_is_not_enabled" do
   title "Ensure tftp-server is not enabled"
@@ -157,7 +183,7 @@ You can run your test with the following command
 inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
 ```
 
-### Step 10: Ensure DHCP Server is not enabled
+### Step 11: Ensure DHCP Server is not enabled
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_6.4_Ensure_DHCP_Server_is_not_enabled" do
   title "Ensure DHCP Server is not enabled"
@@ -178,10 +204,10 @@ end
 You can run your test with the following command
 ```bash
 # run test on remote host on SSH
-inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+$ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
 
-### Step 11: Set Password Creation Requirement Parameters
+### Step 12: Set Password Creation Requirement Parameters
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_9.2.1_Set_Password_Creation_Requirement_Parameters_Using_pam_cracklib" do
   title "Set Password Creation Requirement Parameters Using pam_cracklib"
@@ -222,10 +248,10 @@ end
 You can run your test with the following command
 ```bash
 # run test on remote host on SSH
-inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+$ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
 
-### Step 12: Set Password Expiration Days
+### Step 13: Set Password Expiration Days
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_10.1.1_Set_Password_Expiration_Days" do
   title "Set Password Expiration Days"
@@ -243,10 +269,10 @@ end
 You can run your test with the following command
 ```bash
 # run test on remote host on SSH
-inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+$ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
 
-### Step 13: Lock Inactive User Accounts
+### Step 14: Lock Inactive User Accounts
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_10.5_Lock_Inactive_User_Accounts" do
   title "Lock Inactive User Accounts"
@@ -264,10 +290,10 @@ end
 You can run your test with the following command
 ```bash
 # run test on remote host on SSH
-inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+$ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
 
-### Step 14: Check Permissions on User Home Directories
+### Step 15: Check Permissions on User Home Directories
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_13.7_Check_Permissions_on_User_Home_Directories" do
   title "Check Permissions on User Home Directories"
@@ -285,5 +311,5 @@ end
 You can run your test with the following command
 ```bash
 # run test on remote host on SSH
-inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+$ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```

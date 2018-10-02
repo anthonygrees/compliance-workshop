@@ -264,5 +264,11 @@ To execute this using InSpec and report to A2 run the following command
 ```bash
 $  inspec exec . --json-config inspec.json
 ```
-![Windows Version](/images/10reporter.png)
+Your report will appear under the `compliance` tab
+
+![A2 Reporter](/images/10reporter.png)
+
+You can then drill into each inspec control
+
+![A2 Full View](/images/11fullreport.png)
 

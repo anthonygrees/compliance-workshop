@@ -8,6 +8,7 @@ Run the following command to check your InSpec version.
 ```bash
 $ inspec --version
 ```
+![InSpec Version](/images/1inspecversion.png)
 
 ### Step 2: Determine your platform
 Use the InSpec ```detect``` command to check the platform you are running on.  Replace the ```999.999.999.999``` with the IP address given to you by the instructor.

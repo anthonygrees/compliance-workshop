@@ -14,6 +14,7 @@ Use the InSpec ```detect``` command to check the platform you are running on.  R
 ```bash
 inspec detect -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
 ```
+![Platform](/images/l1.png)
 
 ### Step 4: Let's look at InSpec Shell
 It's a pry based Read–Eval–Print Loop that can be used to quickly run InSpec controls and tests without having to write it to a file. Its functionality is similar to chef shell.
@@ -21,7 +22,7 @@ It's a pry based Read–Eval–Print Loop that can be used to quickly run InSpec
 We'll start by connecting to the shell with our key and transport information, and then play around in the shell for a bit and write our first test.
 ```bash
 $ inspec help shell
-$ inspec detect -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+$ inspec shell -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
 
 inspec> help
 inspec> help resources
@@ -37,6 +38,8 @@ inspec> describe sshd_config do
 inspec> its('Protocol') { should eq '2' }
 inspec> end
 ```
+![Shell](/images/l2.png)
+
 Type ```exit``` to leave the shell.
 ```ruby
 inspec> exit

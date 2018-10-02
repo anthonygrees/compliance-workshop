@@ -17,7 +17,7 @@ inspec detect -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
 ```
 ![Platform](/images/l1.png)
 
-### Step 4: Let's look at InSpec Shell
+### Step 3: Let's look at InSpec Shell
 It's a pry based Read–Eval–Print Loop that can be used to quickly run InSpec controls and tests without having to write it to a file. Its functionality is similar to chef shell.
 
 We'll start by connecting to the shell with our key and transport information, and then play around in the shell for a bit and write our first test.
@@ -46,7 +46,7 @@ Type ```exit``` to leave the shell.
 inspec> exit
 ```
 
-### Step 5: Check for insecure protocol
+### Step 4: Check for insecure protocol
 Now, create a new InSpec profile
 ```bash
 ## Create a New InSpec Profile
@@ -72,8 +72,9 @@ InSpec makes it easy to run your tests wherever you need.
 # run test on remote host on SSH
 $ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
 ```
+![Telnet](/images/l3.png)
 
-### Step 6: Ensure telnet server is not enabled
+### Step 5: Ensure telnet server is not enabled
 Add the following InSpec check for telnet.
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_5.1.6_Ensure_telnet_server_is_not_enabled" do
@@ -94,7 +95,9 @@ You can run your test with the following command
 # run test on remote host on SSH
 $ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
 ```
-### Step 7: Report in Chef Automate
+![Telnet Enabled](/images/l4.png)
+
+### Step 6: Report in Chef Automate
 Create a file called ```inspec.json``` in <your_profile_name> directory and add the following:
 
 Note: Remember to update the ```json``` and put your name in ```"node_name" : "<YOUR_NAME_HERE>"``` and add your ```TOKEN``` from the spreadsheet.
@@ -119,8 +122,9 @@ To execute this using InSpec and report to A2 run the following command
 ```bash
 $ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
+![Report](/images/l6.png)
 
-### Step 8: Ensure FTP Server is not enabled
+### Step 7: Ensure FTP Server is not enabled
 
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_6.9_Ensure_FTP_Server_is_not_enabled" do
@@ -141,8 +145,9 @@ You can run your test with the following command
 # run test on remote host on SSH
 $ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
+![FTP](/images/l7.png)
 
-### Step 9: Ensure shadow group is empty
+### Step 8: Ensure shadow group is empty
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_13.20_Ensure_shadow_group_is_empty" do
   title "Ensure shadow group is empty"
@@ -165,8 +170,9 @@ You can run your test with the following command
 # run test on remote host on SSH
 $ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
+![Shadow](/images/l8.png)
 
-### Step 10: Ensure tftp-server is not enabled
+### Step 9: Ensure tftp-server is not enabled
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_5.1.7_Ensure_tftp-server_is_not_enabled" do
   title "Ensure tftp-server is not enabled"
@@ -186,8 +192,9 @@ You can run your test with the following command
 # run test on remote host on SSH
 inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
 ```
+![tFTP](/images/l9.png)
 
-### Step 11: Ensure DHCP Server is not enabled
+### Step 10: Ensure DHCP Server is not enabled
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_6.4_Ensure_DHCP_Server_is_not_enabled" do
   title "Ensure DHCP Server is not enabled"
@@ -210,8 +217,9 @@ You can run your test with the following command
 # run test on remote host on SSH
 $ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
+![DHCP](/images/l10.png)
 
-### Step 12: Set Password Creation Requirement Parameters
+### Step 11: Set Password Creation Requirement Parameters
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_9.2.1_Set_Password_Creation_Requirement_Parameters_Using_pam_cracklib" do
   title "Set Password Creation Requirement Parameters Using pam_cracklib"
@@ -254,8 +262,9 @@ You can run your test with the following command
 # run test on remote host on SSH
 $ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
+![Pass](/images/l11.png)
 
-### Step 13: Set Password Expiration Days
+### Step 12: Set Password Expiration Days
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_10.1.1_Set_Password_Expiration_Days" do
   title "Set Password Expiration Days"
@@ -275,8 +284,9 @@ You can run your test with the following command
 # run test on remote host on SSH
 $ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
+![Expire](/images/l12.png)
 
-### Step 14: Lock Inactive User Accounts
+### Step 13: Lock Inactive User Accounts
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_10.5_Lock_Inactive_User_Accounts" do
   title "Lock Inactive User Accounts"
@@ -296,8 +306,9 @@ You can run your test with the following command
 # run test on remote host on SSH
 $ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
+![Lock](/images/l13.png)
 
-### Step 15: Check Permissions on User Home Directories
+### Step 14: Check Permissions on User Home Directories
 ```ruby
 control "xccdf_org.cisecurity.benchmarks_rule_13.7_Check_Permissions_on_User_Home_Directories" do
   title "Check Permissions on User Home Directories"
@@ -317,3 +328,4 @@ You can run your test with the following command
 # run test on remote host on SSH
 $ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
+![Permissions](/images/l14.png)

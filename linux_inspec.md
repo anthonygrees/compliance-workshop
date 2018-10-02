@@ -3,6 +3,8 @@ InSpec is an open-source testing framework for infrastructure with a human- and 
 
 Don't have InSpec installed ?  Here you go - https://downloads.chef.io/inspec
 
+Need the code ? You can find it here - https://github.com/anthonygrees/compliance-linux
+
 ### Step 1: Check your InSpec Version
 Run the following command to check your InSpec version.
 ```bash

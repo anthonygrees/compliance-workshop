@@ -3,6 +3,8 @@ InSpec is an open-source testing framework for infrastructure with a human- and 
 
 Don't have InSpec installed ?  Here you go - https://downloads.chef.io/inspec
 
+Need the code ? You will find it here - https://github.com/anthonygrees/compliance-windows
+
 ### Step 1: Check your InSpec Version
 ```bash
 $ inspec --version

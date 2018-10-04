@@ -192,7 +192,7 @@ end
 You can run your test with the following command
 ```bash
 # run test on remote host on SSH
-inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
+inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
 ![tFTP](/images/l9.png)
 

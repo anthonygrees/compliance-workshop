@@ -26,7 +26,7 @@ $ code controls\example.rb
 ![Create Profile](/images/2createprofile.png)
 
 ### Step 3: Create a simple Windows Version check
-Now add the following to the example.rb file
+Replace the code in example.rb file with the following:
 
 ```bash
 # Windows Versions - Check for Min of Win 2012
@@ -87,7 +87,7 @@ $ inspec exec .
 ![Windows Version](/images/4kb.png)
 
 ### Step 5: Check if a package is installed
-Is a particular package installed ?
+Is a particular package installed ? Add the following code.
 
 ```bash
 control 'PACKAGE INSTALLED _ TELNET and CHROME' do
@@ -112,7 +112,7 @@ $ inspec exec .
 ![Windows Version](/images/5package.png)
 
 ### Step 6: Check if a Windows Service installed and Enabled
-Is a particular Service installed ?
+Is a particular Service installed ? Add the following code.
 
 ```bash
 ## service example
@@ -130,7 +130,7 @@ end
 To execute this using InSpec, run the following command
 
 ```bash
-$ inspec exec audit.rb
+$ inspec exec .
 ```
 ![Windows Version](/images/6service.png)
 
@@ -169,7 +169,7 @@ end
 To execute this using InSpec, run the following command
 
 ```bash
-$ inspec exec audit.rb
+$ inspec exec .
 ```
 ![Windows Version](/images/7http.png)
 
@@ -201,7 +201,7 @@ end
 To execute this using InSpec, run the following command
 
 ```bash
-$ inspec exec audit.rb
+$ inspec exec .
 ```
 ![Windows Version](/images/8task.png)
 
@@ -237,12 +237,14 @@ end
 To execute this using InSpec, run the following command
 
 ```bash
-$ inspec exec audit.rb
+$ inspec exec .
 ```
 ![Windows Version](/images/9cis.png)
 
 ## Step 10: Report in Chef Automate
 Create a file called ```inspec.json``` in <your_profile_name> directory and add the following:
+
+To create the file, type `code inspec.json`
 
 Note: Remember to update the ```json``` and put your name in ```"node_name" : "<YOUR_NAME_HERE>"``` and add your ```TOKEN``` from the spreadsheet.
 

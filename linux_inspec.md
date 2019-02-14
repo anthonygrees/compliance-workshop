@@ -110,7 +110,7 @@ Note: Remember to update the ```json``` and put your name in ```"node_name" : "<
         "automate" : {
             "stdout" : "false",
             "url" : "https://automate.automate-demo.com/data-collector/v0",
-            "token" : "R_qXawTym_Mf-C6obsAvCjHjcws=",
+            "token" : "cjHePBDBVIJn_vXXxYOFfFfbL3Q=",
             "insecure" : true,
             "node_name" : "<YOUR_NAME_HERE>",
             "environment" : "dev"

@@ -8,33 +8,34 @@ Follow this link to setup the environment and configure Chef Automate
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/setup.md
 
-## Student Training - InSpec from CLI
+## Student Training
+### InSpec from CLI
 
-### WINDOWS - Learn InSpec on the Windows BJC workstation CLI
+#### WINDOWS - Learn InSpec on the Windows BJC workstation CLI
 Follow this link for Inspec examples that can run on the BJC Windows workstation
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/windows_inspec.md
 
-### LINUX - Learn InSpec from BJC against Linux node CLI
+#### LINUX - Learn InSpec from BJC against Linux node CLI
 Follow this link for Inspec examples that can run from the BJC workstation against an Ubuntu instance.
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/linux_inspec.md
 
-## Student Training - InSpec on Chef Automate with the Audit Cookbook
+### InSpec on Chef Automate with the Audit Cookbook
 
-### Windows Instructions
+#### Windows Instructions for reporting to Chef Automate
 Follow this link to the Windows instructions:
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/windows.md
 
 
-### CentOS Instructions
+#### CentOS Instructions for reporting to Chef Automate
 Follow this link to the CentOS instructions:
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/centos.md
 
 
-### RHEL Instructions
+#### RHEL Instructions for reporting to Chef Automate
 Follow this link to the RHEL instructions:
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/rhel.md

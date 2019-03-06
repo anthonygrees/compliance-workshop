@@ -17,6 +17,10 @@ Use the InSpec ```detect``` command to check the platform you are running on.  R
 ```bash
 inspec detect -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
 ```
+or 
+```
+inspec detect -t ssh://centos@ec2-54-190-15-224.us-west-2.compute.amazonaws.com -i C:\Users\chef\.ssh\id_rsa
+```
 ![Platform](/images/l1.png)
 
 ### Step 3: Let's look at InSpec Shell

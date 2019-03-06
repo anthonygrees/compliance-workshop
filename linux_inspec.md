@@ -117,6 +117,7 @@ Note: Remember to update the ```json``` and put your name in ```"node_name" : "<
             "token" : "cjHePBDBVIJn_vXXxYOFfFfbL3Q=",
             "insecure" : true,
             "node_name" : "<YOUR_NAME_HERE>",
+            "node_uuid" : "<YOUR_NAME>-1234",
             "environment" : "dev"
         }
     }

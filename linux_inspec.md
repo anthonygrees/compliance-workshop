@@ -336,3 +336,23 @@ You can run your test with the following command
 $ inspec exec . -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json
 ```
 ![Permissions](/images/l14.png)
+
+
+--------------------
+## UUID Error
+If you get a node uuid error, then create a file called ```inspec.json```
+
+```
+{
+    "reporter": {
+        "cli" : {
+            "stdout" : true,
+            "node_uuid" : "<yourname>-1234"
+        }
+    }
+}
+```
+
+And execute with the following command
+
+```inspec exec . -t ssh://centos@99.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json```

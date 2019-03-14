@@ -277,3 +277,23 @@ You can then drill into each inspec control
 
 ![A2 Full View](/images/11fullreport.png)
 
+
+--------------------
+## UUID Error
+If you get a node uuid error, then create a file called ```inspec.json```
+
+```
+{
+    "reporter": {
+        "cli" : {
+            "stdout" : true,
+            "node_uuid" : "<yourname>-1234"
+        }
+    }
+}
+```
+
+And execute with the following command
+
+```inspec exec . --json-config inspec.json```
+

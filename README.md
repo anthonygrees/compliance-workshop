@@ -2,12 +2,6 @@
 
 Instructions for students attending Day 2 training for Compliance on Chef Automate.
 
-## Instructor Links
-### Setup Instructions
-Follow this link to setup the environment and configure Chef Automate
-
-https://github.com/anthonygrees/compliance-workshop/blob/master/setup.md
-
 ## Student Training
 ### InSpec from CLI
 
@@ -40,6 +34,12 @@ Follow this link to the RHEL instructions:
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/rhel.md
 
+
+## Instructor Links
+### Setup Instructions
+Follow this link to setup the environment and configure Chef Automate
+
+https://github.com/anthonygrees/compliance-workshop/blob/master/setup.md
 
 
 ## License and Author

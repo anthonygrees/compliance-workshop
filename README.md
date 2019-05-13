@@ -1,5 +1,9 @@
 ![Chef Header](/images/Header.png)
-# Chef and InSpec compliance-workshop Training
+# Chef and InSpec Training and Complaince Workshop
+
+This course is designed to accelerate you from zero to hero into the world of DevOps from the perspective of using Chef Configuration Management and Test Driven Development with InSpec.  It is also the lead-in to learning Habitat. 
+
+Through this three-day command-line driven adventure, you will develop a solid foundation for managing dozens, hundreds or even thousands of servers the way Facebook, Target, Nordstrom, and many other successful companies do – by using Chef.
 
 Instructions for students attending Day 1 Chef Infra training and Day 2 training for Compliance on Chef Automate.
 

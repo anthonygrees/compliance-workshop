@@ -1,3 +1,4 @@
+![Chef Header](/images/Header.png)
 # Chef and InSpec compliance-workshop Training
 
 Instructions for students attending Day 1 Chef Infra training and Day 2 training for Compliance on Chef Automate.
@@ -10,7 +11,7 @@ Instructions for students attending Day 1 Chef Infra training and Day 2 training
 
 
 ## Day 2 - Chef InSpec
-![Chef Infra](/images/ChefInSpec.png)
+![Chef InSpec](/images/ChefInSpec.png)
 ### Part 1: InSpec from the Command Line (CLI)
 
 #### Part 1a: Windows - Learn InSpec on the Windows BJC workstation CLI

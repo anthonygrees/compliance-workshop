@@ -1,8 +1,14 @@
-# Chef compliance-workshop Training
+# Chef and InSpec compliance-workshop Training
 
-Instructions for students attending Day 2 training for Compliance on Chef Automate.
+Instructions for students attending Day 1 Chef Infra training and Day 2 training for Compliance on Chef Automate.
 
-## Student Training
+![Chef Infra](/images/ChefInfra.png)
+## Day 1 - Chef Infra
+### Helpful Links
+
+
+![Chef Infra](/images/ChefInSpec.png)
+## Day 2 - Chef InSpec
 ### InSpec from CLI
 
 #### WINDOWS - Learn InSpec on the Windows BJC workstation CLI

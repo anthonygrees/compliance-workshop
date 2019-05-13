@@ -2,40 +2,42 @@
 
 Instructions for students attending Day 1 Chef Infra training and Day 2 training for Compliance on Chef Automate.
 
-![Chef Infra](/images/ChefInfra.png)
+
 ## Day 1 - Chef Infra
+![Chef Infra](/images/ChefInfra.png)
 ### Helpful Links
 
 
-![Chef Infra](/images/ChefInSpec.png)
-## Day 2 - Chef InSpec
-### InSpec from CLI
 
-#### WINDOWS - Learn InSpec on the Windows BJC workstation CLI
+## Day 2 - Chef InSpec
+![Chef Infra](/images/ChefInSpec.png)
+### Part 1: InSpec from the Command Line (CLI)
+
+#### Part 1a: Windows - Learn InSpec on the Windows BJC workstation CLI
 Follow this link for Inspec examples that can run on the BJC Windows workstation
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/windows_inspec.md
 
-#### LINUX - Learn InSpec from BJC against Linux node CLI
+#### Part 1b: Linux - Learn InSpec from BJC against Linux node CLI
 Follow this link for Inspec examples that can run from the BJC workstation against an Ubuntu instance.
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/linux_inspec.md
 
-### InSpec on Chef Automate with the Audit Cookbook
+### Part 2: InSpec on Chef Automate with the Audit Cookbook
 
-#### Windows Instructions for reporting to Chef Automate
+#### Part 2a: Windows Instructions for reporting to Chef Automate
 Follow this link to the Windows instructions:
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/windows.md
 
 
-#### CentOS Instructions for reporting to Chef Automate
+#### Part 2b: CentOS Instructions for reporting to Chef Automate
 Follow this link to the CentOS instructions:
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/centos.md
 
 
-#### RHEL Instructions for reporting to Chef Automate
+#### Part 2b: RHEL Instructions for reporting to Chef Automate
 Follow this link to the RHEL instructions:
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/rhel.md

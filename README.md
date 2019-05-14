@@ -33,7 +33,10 @@ Follow this link for Inspec examples that can run from the BJC workstation again
 
 https://github.com/anthonygrees/compliance-workshop/blob/master/linux_inspec.md
 
+
+
 ### Part 2: InSpec on Chef Automate with the Audit Cookbook
+![ChefAutomate](/images/ChefAutomate.png)
 
 #### Part 2a: Windows Instructions for reporting to Chef Automate
 Follow this link to the Windows instructions:

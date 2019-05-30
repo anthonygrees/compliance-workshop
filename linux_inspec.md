@@ -356,3 +356,11 @@ If you get a node uuid error, then create a file called ```inspec.json```
 And execute with the following command
 
 ```inspec exec . -t ssh://centos@99.999.999.999 -i C:\Users\chef\.ssh\id_rsa --json-config inspec.json```
+
+Otherwise you can create a UUID for InSpec when you create your node:
+```
+file '/etc/machine-id' do
+  content 'anthony1234'
+end
+```
+

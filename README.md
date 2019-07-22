@@ -15,6 +15,9 @@ Instructions for students attending Day 1 Chef Infra training and Day 2 training
  - Module 4 - The ```.kitchen.yml``` for the ```webserver cookbook```
 https://github.com/anthonygrees/webserver_poc/blob/master/.kitchen.yml
 
+ - Module 4 - The ```default_test.rb``` test examples
+ https://github.com/anthonygrees/webserver_poc/blob/master/test/smoke/default/default_test.rb
+
  - Module 7 - The Windows example for Webserver using ```iis```
 https://github.com/anthonygrees/myiis
 

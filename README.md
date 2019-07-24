@@ -59,6 +59,11 @@ Follow this link to the RHEL instructions:
 https://github.com/anthonygrees/compliance-workshop/blob/master/rhel.md
 
 
+## Student Slides
+The slides used in this workshop cen be found here in a PDF format.
+https://github.com/anthonygrees/compliance-workshop/tree/master/slides
+
+
 ## Instructor Links
 ### Setup Instructions
 Follow this link to setup the environment and configure Chef Automate

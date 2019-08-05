@@ -13,25 +13,28 @@ Instructions for students attending Day 1 Chef Infra training and Day 2 training
 ### Helpful Links
 
  - Module 4 - The ```.kitchen.yml``` for the ```webserver cookbook```
-https://github.com/anthonygrees/webserver_poc/blob/master/.kitchen.yml
+[Click Here for the .kitchen.yml code](https://github.com/anthonygrees/webserver_poc/blob/master/.kitchen.yml)
 
  - Module 4 - The ```default_test.rb``` test examples
- https://github.com/anthonygrees/webserver_poc/blob/master/test/smoke/default/default_test.rb
+ [Click Here for the test code](https://github.com/anthonygrees/webserver_poc/blob/master/test/smoke/default/default_test.rb)
 
  - Module 7 - The Windows example for Webserver using ```iis```
-https://github.com/anthonygrees/myiis
+[Click here the for Webserver code](https://github.com/anthonygrees/myiis)
 
 
 ## Day 2 - Chef InSpec
 ![Chef InSpec](/images/ChefInSpec.png)
+
 ### Part 1: InSpec from the Command Line (CLI)
-https://github.com/anthonygrees/compliance-workshop/blob/master/insoec_part1.md
+![ChefAutomate](/images/3version.png)
+
+[Click Here for Part 1](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part1.md)
 
 
 ### Part 2: InSpec on Chef Automate with the Audit Cookbook
 ![ChefAutomate](/images/ChefAutomate.png)
 
-https://github.com/anthonygrees/compliance-workshop/blob/master/insoec_part1.md
+[Click Here for Part 2](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part2.md)
 
 
 

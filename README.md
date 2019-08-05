@@ -10,6 +10,11 @@ Instructions for students attending Day 1 Chef Infra training and Day 2 training
 
 ## Day 1 - Chef Infra
 ![Chef Infra](/images/ChefInfra.png)
+
+### Student Slides
+The slides used in this workshop cen be found here in a PDF format.
+[Click Here for the Slides](https://github.com/anthonygrees/compliance-workshop/tree/master/slides)
+
 ### Helpful Links
 
  - Module 4 - The ```.kitchen.yml``` for the ```webserver cookbook```
@@ -22,6 +27,8 @@ Instructions for students attending Day 1 Chef Infra training and Day 2 training
 [Click here the for Webserver code](https://github.com/anthonygrees/myiis)
 
 
+
+
 ## Day 2 - Chef InSpec
 ![Chef InSpec](/images/ChefInSpec.png)
 
@@ -31,6 +38,8 @@ Instructions for students attending Day 1 Chef Infra training and Day 2 training
 [Click Here for Part 1](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part1.md)
 
 
+
+
 ### Part 2: InSpec on Chef Automate with the Audit Cookbook
 ![ChefAutomate](/images/ChefAutomate.png)
 
@@ -38,16 +47,13 @@ Instructions for students attending Day 1 Chef Infra training and Day 2 training
 
 
 
-## Student Slides
-The slides used in this workshop cen be found here in a PDF format.
-https://github.com/anthonygrees/compliance-workshop/tree/master/slides
 
 
 ## Instructor Links
 ### Setup Instructions
 Follow this link to setup the environment and configure Chef Automate
 
-https://github.com/anthonygrees/compliance-workshop/blob/master/setup.md
+[Click Here for Instructor Setup Details](https://github.com/anthonygrees/compliance-workshop/blob/master/setup.md)
 
 
 ## License and Author

@@ -1,3 +1,6 @@
+## Day 2 - Chef InSpec
+![Chef InSpec](/images/ChefInSpec.png)
+
 ### Part 2: InSpec on Chef Automate with the Audit Cookbook
 ![ChefAutomate](/images/ChefAutomate.png)
 

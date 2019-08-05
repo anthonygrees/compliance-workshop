@@ -8,7 +8,7 @@ Through this three-day command-line driven adventure, you will develop a solid f
 Instructions for students attending Day 1 Chef Infra training and Day 2 training for Compliance on Chef Automate.
 
 | Item | Course  | Link  |
-| :---: |:-------------:| :-----:|
+| :---: |:-------------| :-----|
 | 1  | Day 1 - Chef Infrastructure | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/chef.md) |
 | 2  | Day 2 - InSpec|  |
 | 2a  | InSpec Part 1: InSpec from the Command Line (CLI)|  [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part1.md) |

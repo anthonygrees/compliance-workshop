@@ -25,38 +25,14 @@ https://github.com/anthonygrees/myiis
 ## Day 2 - Chef InSpec
 ![Chef InSpec](/images/ChefInSpec.png)
 ### Part 1: InSpec from the Command Line (CLI)
-
-#### Part 1a: Windows - Learn InSpec on the Windows BJC workstation CLI
-Follow this link for Inspec examples that can run on the BJC Windows workstation
-
-https://github.com/anthonygrees/compliance-workshop/blob/master/windows_inspec.md
-
-#### Part 1b: Linux - Learn InSpec from BJC against Linux node CLI
-Follow this link for Inspec examples that can run from the BJC workstation against an Ubuntu instance.
-
-https://github.com/anthonygrees/compliance-workshop/blob/master/linux_inspec.md
-
+https://github.com/anthonygrees/compliance-workshop/blob/master/insoec_part1.md
 
 
 ### Part 2: InSpec on Chef Automate with the Audit Cookbook
 ![ChefAutomate](/images/ChefAutomate.png)
 
-#### Part 2a: Windows Instructions for reporting to Chef Automate
-Follow this link to the Windows instructions:
+https://github.com/anthonygrees/compliance-workshop/blob/master/insoec_part1.md
 
-https://github.com/anthonygrees/compliance-workshop/blob/master/windows.md
-
-
-#### Part 2b: CentOS Instructions for reporting to Chef Automate
-Follow this link to the CentOS instructions:
-
-https://github.com/anthonygrees/compliance-workshop/blob/master/centos.md
-
-
-#### Part 2b: RHEL Instructions for reporting to Chef Automate
-Follow this link to the RHEL instructions:
-
-https://github.com/anthonygrees/compliance-workshop/blob/master/rhel.md
 
 
 ## Student Slides

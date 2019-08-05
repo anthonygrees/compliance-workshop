@@ -2,19 +2,13 @@
 ![ChefAutomate](/images/ChefAutomate.png)
 
 #### Part 2a: Windows Instructions for reporting to Chef Automate
-Follow this link to the Windows instructions:
-
-https://github.com/anthonygrees/compliance-workshop/blob/master/windows.md
+Follow this link to the Windows instructions: [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/windows.md)
 
 
 #### Part 2b: CentOS Instructions for reporting to Chef Automate
-Follow this link to the CentOS instructions:
-
-https://github.com/anthonygrees/compliance-workshop/blob/master/centos.md
+Follow this link to the CentOS instructions: [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/centos.md)
 
 
 #### Part 2b: RHEL Instructions for reporting to Chef Automate
-Follow this link to the RHEL instructions:
-
-https://github.com/anthonygrees/compliance-workshop/blob/master/rhel.md
+Follow this link to the RHEL instructions: [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/rhel.md)
 

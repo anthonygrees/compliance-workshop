@@ -8,6 +8,7 @@ Through this three-day command-line driven adventure, you will develop a solid f
 Instructions for students attending Day 1 Chef Infra training and Day 2 training for Compliance on Chef Automate.
 
 
+
 ## Day 1 - Chef Infra
 ![Chef Infra](/images/ChefInfra.png)
 

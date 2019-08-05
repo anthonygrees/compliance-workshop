@@ -7,54 +7,15 @@ Through this three-day command-line driven adventure, you will develop a solid f
 
 Instructions for students attending Day 1 Chef Infra training and Day 2 training for Compliance on Chef Automate.
 
+| Item | Course  | Link  |
+| :---: |:-------------:| :-----:|
+| 1  | Day 1 - Chef Infrastructure | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/chef.md) |
+| 2  | Day 2 - InSpec|  |
+| 2a  | InSpec Part 1: InSpec from the Command Line (CLI)|  [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part1.md) |
+| 2b  | InSpec Part 2: InSpec on Chef Automate with the Audit Cookbook|  [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part2.md) |
+| 3  | Instructor Setup Details: Follow this link to setup the environment and configure Chef Automate | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/setup.md) |
 
 
-## Day 1 - Chef Infra
-![Chef Infra](/images/ChefInfra.png)
-
-### Student Slides
-The slides used in this workshop cen be found here in a PDF format.
-[Click Here for the Slides](https://github.com/anthonygrees/compliance-workshop/tree/master/slides)
-
-### Helpful Links
-
- - Module 4 - The ```.kitchen.yml``` for the ```webserver cookbook```
-[Click Here for the .kitchen.yml code](https://github.com/anthonygrees/webserver_poc/blob/master/.kitchen.yml)
-
- - Module 4 - The ```default_test.rb``` test examples
- [Click Here for the test code](https://github.com/anthonygrees/webserver_poc/blob/master/test/smoke/default/default_test.rb)
-
- - Module 7 - The Windows example for Webserver using ```iis```
-[Click here the for Webserver code](https://github.com/anthonygrees/myiis)
-
-
-
-
-## Day 2 - Chef InSpec
-![Chef InSpec](/images/ChefInSpec.png)
-
-### Part 1: InSpec from the Command Line (CLI)
-![ChefAutomate](/images/3version.png)
-
-[Click Here for Part 1](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part1.md)
-
-
-
-
-### Part 2: InSpec on Chef Automate with the Audit Cookbook
-![ChefAutomate](/images/ChefAutomate.png)
-
-[Click Here for Part 2](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part2.md)
-
-
-
-
-
-## Instructor Links
-### Setup Instructions
-Follow this link to setup the environment and configure Chef Automate
-
-[Click Here for Instructor Setup Details](https://github.com/anthonygrees/compliance-workshop/blob/master/setup.md)
 
 
 ## License and Author

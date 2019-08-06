@@ -20,3 +20,4 @@ The slides used in this workshop cen be found here in a PDF format.
 2. [DevOps Kung fu](https://github.com/chef/devops-kungfu) - This repository defines Chef Style DevOps Kung fu, which explains what DevOps is, and defines a style of practice that comes from the lived experience of many DevOps professionals.
 3. [Chef Style DevOps Kungfu](https://www.youtube.com/watch?v=_DEToXsgrPc) - Adam Jacob Keynote - ChefConf 2015
 4. [Eggs 365](https://www.youtube.com/watch?v=XD0vRW4G82U&t=2s) - ChefConf 2015: How is your Continuous Delivery Kung Fu?
+5. [DevOps: No Horse Sh**](https://www.youtube.com/watch?v=0P0HD5pE-zU) - Original (language warning) - ChefConf 2014: Nathen Harvey knows DevOps, not farming. In this video, Nathen and his feathered and hooved friends explain how DevOps is (and isn't) like a closed-loop farm. 

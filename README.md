@@ -10,9 +10,11 @@ Instructions for students attending Day 1 Chef Infra training and Day 2 training
 | Item | Course  | Link  |
 | :---: |:-------------| :-----|
 | 1  | `Day 1` - **Chef Infrastructure** | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/chef.md) |
+|   |   |   |
 | 2  | `Day 2` - **InSpec Compliance** |  |
 | 2a  | InSpec - Part 1 InSpec from the Command Line (CLI)|  [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part1.md) |
 | 2b  | InSpec - Part 2 InSpec on Chef Automate with the Audit Cookbook|  [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part2.md) |
+|   |   |   |
 | 3  | `Setup` - Instructor Details: Follow this link to setup the environment and configure Chef Automate | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/setup.md) |
 
 

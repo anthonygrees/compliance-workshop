@@ -7,7 +7,10 @@ The slides used in this workshop cen be found here in a PDF format.
 
 | Nbr | Module | Link |
 |---|---|---|
-| 1 | Introduction | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/slides/01-Introduction.pdf)
+| 1 | Introduction to Chef | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/slides/01-Introduction.pdf)
+| 2 | Chef Resources | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/slides/03-Resources.pdf)
+| 3 | Creating a Chef Cookbook | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/slides/04-creating-web-server-cookbook.pdf)|
+| 4 | Capture Details about the System | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/slides/05-details-about-the-system.pdf)|
 
 [Click Here for the Slides](https://github.com/anthonygrees/compliance-workshop/tree/master/slides)
 

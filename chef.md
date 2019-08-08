@@ -4,6 +4,11 @@
 
 ### Student Slides
 The slides used in this workshop cen be found here in a PDF format.
+
+| Nbr | Module | Link |
+|---|---|---|
+| 1 | Introduction | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/slides/01-Introduction.pdf)
+
 [Click Here for the Slides](https://github.com/anthonygrees/compliance-workshop/tree/master/slides)
 
 ### Helpful Links

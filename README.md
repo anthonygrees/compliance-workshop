@@ -9,7 +9,9 @@ Instructions for students attending Day 1 Chef Infra training and Day 2 training
 
 | Item | Course  | Link  |
 | :---: |:-------------| :-----|
-| 1  | `Day 1` - **Chef Infrastructure** | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/chef.md) |
+| 1  | `Day 1` - **Chef Infrastructure** |  |
+| 1a | Chef Essentials | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/chef.md) |
+| 1b | Policyfiles Training | [Click Here](https://github.com/anthonygrees/policyfiles_training) |
 |   |   |   |
 | 2  | `Day 2` - **InSpec Compliance** |  |
 | 2a  | InSpec - Part 1 InSpec from the Command Line (CLI)|  [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part1.md) |

@@ -1,9 +1,9 @@
 ## InSpec on Linux
-InSpec is an open-source testing framework for infrastructure with a human- and machine-readable language for specifying compliance, security and policy requirements.
+InSpec is an open-source testing framework for infrastructure with a human and machine-readable language for specifying compliance, security and policy requirements.
 
-Don't have InSpec installed ?  Here you go - https://downloads.chef.io/inspec
+Don't have InSpec installed?  Here you go - https://downloads.chef.io/inspec
 
-Need the code ? You can find it here - https://github.com/anthonygrees/compliance-linux
+Need the code? You can find it here - https://github.com/anthonygrees/compliance-linux
 
 ### Step 1: Check your InSpec Version
 Run the following command to check your InSpec version.
@@ -17,14 +17,14 @@ Use the InSpec ```detect``` command to check the platform you are running on.  R
 ```bash
 inspec detect -t ssh://ubuntu@999.999.999.999 -i C:\Users\chef\.ssh\id_rsa
 ```
-or 
+or
 ```
 inspec detect -t ssh://centos@ec2-54-190-15-224.us-west-2.compute.amazonaws.com -i C:\Users\chef\.ssh\id_rsa
 ```
 ![Platform](/images/l1.png)
 
 ### Step 3: Let's look at InSpec Shell
-It's a pry based Read–Eval–Print Loop that can be used to quickly run InSpec controls and tests without having to write it to a file. Its functionality is similar to chef shell.
+It's a pry-based Read–Eval–Print Loop that can be used to quickly run InSpec controls and tests without having to write it to a file. Its functionality is similar to ```chef-shell```.
 
 We'll start by connecting to the shell with our key and transport information, and then play around in the shell for a bit and write our first test.
 ```bash
@@ -117,7 +117,7 @@ Note: Remember to update the ```json``` and put your name in ```"node_name" : "<
             "token" : "XvEQ3fZCBea00_0pqWi7o0nXF5E=",
             "insecure" : true,
             "node_name" : "<YOUR_NAME_HERE>",
-            "node_uuid" : "<YOUR_NAME>-1234",
+            "node_uuid" : "12345678-1234-1234-1234-123456789012",
             "environment" : "dev"
         }
     }
@@ -360,7 +360,6 @@ And execute with the following command
 Otherwise you can create a UUID for InSpec when you create your node:
 ```
 file '/etc/machine-id' do
-  content 'anthony1234'
+  content '12345678-1234-1234-1234-123456789012'
 end
 ```
-

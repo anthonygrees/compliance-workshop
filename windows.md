@@ -4,9 +4,9 @@ The following instructions will be performed for the Windows Compliance Training
 #### 1. Manually Scan the Windows node
 
 Use the Chef Automate Scanner to scan your node
- * Create your credentials
- * Add your Node
- * Add your job
+ * Create your credentials (Settings->Node Credentials->Add Credential->Type 'WinRM')
+ * Add your Node (Settings->Node Integrations->manually managed nodes manager->Add Nodes->172.31.54.201)
+ * Add your job (Compliance->Scan Jobs->Create new job->manually managed nodes manager->Next)
 
 #### *** Automatically Scan and Harden ***
 #### 2. Bootstrap nodes example commands - with knife
@@ -24,12 +24,15 @@ net user Administrator "new_password"
 
 #### 3. Automatically schedule chef-client runs with the Chef-Client cookbook
 This version of the Chef-Client Cookbook is modified for training purposes and is set to run every 3 mins and 30 seconds.  It should NOT be used for any other purpose.
+
+Use the [example policyfile](https://github.com/anthonygrees/policyfiles_training/blob/master/example/base.rb) to assign the node's run list.
+
 ```bash
-$ git clone https://github.com/anthonygrees/chef-client.git
-$ cd chef-client
-$ berks install
-$ berks upload
+$ chef install base.rb
+$ chef push test base.rb
+$ knife node policy set Your_Node_Name test base
 ```
+
 #### 4. Kick off Chef Client run to enable the Chef-Client Cookbook
 ###### Windows (on AWS using public hostname)
 This will set the Chef Client to run every 3 min and 30 secs
@@ -49,25 +52,20 @@ when 'windows'
       },
     ]
 ```
-https://github.com/anthonygrees/audit_agr
+Update the ```base.rb``` Policyfile to include this recipe.
+
 ```bash
-$ git clone https://github.com/anthonygrees/audit_agr
-$ cd audit_agr
-$ berks install
-$ berks upload
+$ chef update base.rb
+$ chef push test base.rb
 ```
 
 #### 6. Use the Windows 2012 R2 server Hardening Cookbook to fix the CIS errors
 This version has been modified to enable WINRM
-
-```bash
-$ git clone https://github.com/anthonygrees/cis-win2012r2-l1-hardening-cookbook
-$ cd cis-win2012r2-l1-hardening-cookbook
-$ berks install
-$ berks upload
-```
 https://github.com/anthonygrees/cis-win2012r2-l1-hardening-cookbook
 
+```bash
+$ chef update base.rb
+$ chef push test base.rb
+```
+
 Now wait for the Audit Profile to run :)
-
-

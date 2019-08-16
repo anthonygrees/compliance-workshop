@@ -1,9 +1,9 @@
 ## InSpec on Windows
-InSpec is an open-source testing framework for infrastructure with a human- and machine-readable language for specifying compliance, security and policy requirements.
+InSpec is an open-source testing framework for infrastructure with a human and machine-readable language for specifying compliance, security and policy requirements.
 
-Don't have InSpec installed ?  Here you go - https://downloads.chef.io/inspec
+Don't have InSpec installed?  Here you go - https://downloads.chef.io/inspec
 
-Need the code ? You will find it here - https://github.com/anthonygrees/compliance-windows
+Need the code? You will find it here - https://github.com/anthonygrees/compliance-windows
 
 ### Step 1: Check your InSpec Version
 ```bash
@@ -112,7 +112,7 @@ $ inspec exec .
 ![Windows Version](/images/5package.png)
 
 ### Step 6: Check if a Windows Service installed and Enabled
-Is a particular Service installed ? Add the following code.
+Is a particular Service installed? Add the following code.
 
 ```bash
 ## service example
@@ -141,7 +141,7 @@ Use the InSpec Port resource to test HTTP and HTTPS
 control 'HTTP AND HTTPS' do
   impact 0.8
   title 'This test checks the HTTP and HTTPS protocols'
-  
+
   # Test HTTP port 80, is not listening and no protocol TCP, ICMP, UDP
   describe port(80) do
       it { should_not be_listening }
@@ -180,7 +180,7 @@ Use the windows_task InSpec resource to check the state of tasks.
 control 'WINDOWS TASKS' do
   impact 0.8
   title 'This test checks the Windows Tasks'
-  
+
   describe windows_task('\Microsoft\Windows\AppID\PolicyConverter') do
     it { should be_disabled }
   end
@@ -208,7 +208,7 @@ $ inspec exec .
 ### Step 9: CIS Example Profile
 Compliance of the OS settings on the windows client
 - Check and verify Group Policy Settings (GPO) with reference to CIS Windows 10 1703 benchmark is begin applied
-- When new monthly windows security patch is applied to the current image, to check if the new patches is successfully applied. Where possible, show the status BEFORE and AFTER the patch for comparison and highlight any errors etc..
+- When new monthly Windows security patch is applied to the current image, to check if the new patches is successfully applied. Where possible, show the status BEFORE and AFTER the patch for comparison and highlight any errors etc.
 
 
 ```bash
@@ -257,7 +257,7 @@ Note: Remember to update the ```json``` and put your name in ```"node_name" : "<
             "token" : "XvEQ3fZCBea00_0pqWi7o0nXF5E=",
             "insecure" : true,
             "node_name" : "<YOUR_NAME_HERE>",
-            "node_uuid" : "<YOUR_NAME>-1234",
+            "node_uuid" : "12345678-1234-1234-1234-123456789012",
             "environment" : "dev"
         }
     }
@@ -277,23 +277,4 @@ You can then drill into each inspec control
 
 ![A2 Full View](/images/11fullreport.png)
 
-
---------------------
-## UUID Error
-If you get a node uuid error, then create a file called ```inspec.json```
-
-```
-{
-    "reporter": {
-        "cli" : {
-            "stdout" : true,
-            "node_uuid" : "<yourname>-1234"
-        }
-    }
-}
-```
-
-And execute with the following command
-
-```inspec exec . --json-config inspec.json```
-
+Note the ```node_uuid``` is present in the URL of the node's compliance report.

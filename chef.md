@@ -16,11 +16,15 @@ The slides used in this workshop cen be found here in a PDF format.
 
 ### Helpful Links
 
- - Module 4 - The ```.kitchen.yml``` for the ```webserver cookbook``` [Click Here](https://github.com/anthonygrees/webserver_poc/blob/master/.kitchen.yml)
+#### Linux
+ - Module 4 - The ```.kitchen.yml``` for the ```Linux webserver cookbook``` [Click Here](https://github.com/anthonygrees/webserver_poc/blob/master/.kitchen.yml)
 
  - Module 4 - The ```default_test.rb``` test examples [Click Here](https://github.com/anthonygrees/webserver_poc/blob/master/test/smoke/default/default_test.rb)
 
- - Module 7 - The Windows example for Webserver using ```iis``` [Click Here](https://github.com/anthonygrees/myiis)
+ #### Windows
+ - Module 4 - The ```.kitchen.yml``` for the ```Windows webserver cookbook``` [Click Here](https://github.com/anthonygrees/myiis/blob/master/.kitchen.yml)
+
+ - Module 4 - The ```default_test.rb``` test examples [Click Here](https://github.com/anthonygrees/myiis/blob/master/test/integration/default/default_test.rb)
 
 ### Extra Learning and Videos
 

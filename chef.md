@@ -26,6 +26,29 @@ The slides used in this workshop cen be found here in a PDF format.
 
  - Module 4 - The ```default_test.rb``` test examples [Click Here](https://github.com/anthonygrees/myiis/blob/master/test/integration/default/default_test.rb)
 
+#### Test-Kitchen Drivers for many Platforms
+A Test-Kitchen ```driver``` is what supports configuring the compute instance that is used for isolated testing. This is typically a local hypervisor, hypervisor abstraction layer (Vagrant), or cloud service (EC2).
+
+ChefDK / Chef Workstation include:
+- [Vagrant](https://github.com/test-kitchen/kitchen-vagrant)
+- [Kitchen Azurerm](https://github.com/test-kitchen/kitchen-azurerm)
+- [Kitchen AWS EC2](https://github.com/test-kitchen/kitchen-ec2)
+- [Kitchen HyperV](https://github.com/test-kitchen/kitchen-hyperv)
+- [Kitchen Google Compute Engine](https://github.com/test-kitchen/kitchen-google)
+- [Kitchen DigitalOcean](https://github.com/test-kitchen/kitchen-digitalocean)
+- [Kitchen Doken for Docker Containers](https://github.com/someara/kitchen-dokken)
+
+VMware Drivers:
+- [kitchen-vra](https://github.com/chef-partners/kitchen-vra)
+- [kitchen-vro](https://github.com/chef-partners/kitchen-vro)
+- [kitchen-vcenter](https://github.com/chef/kitchen-vcenter)
+
+Other Chef and Community Drivers:
+- [Kitchen Terraform](https://github.com/newcontext-oss/kitchen-terraform)
+- [OpenStack](https://github.com/test-kitchen/kitchen-openstack)
+- [Docker](https://github.com/test-kitchen/kitchen-docker)
+
+
 ### Extra Learning and Videos
 
 1. [Chef Software Open Source Communities](https://github.com/chef/chef-oss-practices) - This is a starting point for contributing to all of Chef's software and a wonderful spot for information on how to join in on the fun.

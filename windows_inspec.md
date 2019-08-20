@@ -254,7 +254,7 @@ Note: Remember to update the ```json``` and put your name in ```"node_name" : "<
         "automate" : {
             "stdout" : "false",
             "url" : "https://automate.automate-demo.com/data-collector/v0",
-            "token" : "XvEQ3fZCBea00_0pqWi7o0nXF5E=",
+            "token" : "SVDM7DleL9SyCF8CRO9Kp8huwLY=",
             "insecure" : true,
             "node_name" : "<YOUR_NAME_HERE>",
             "node_uuid" : "12345678-1234-1234-1234-123456789012",

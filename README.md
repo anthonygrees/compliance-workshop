@@ -13,13 +13,15 @@ Instructions for students attending Day 1 Chef Infra training and Day 2 training
 | 1a | Chef Essentials | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/chef.md) |
 | 1b | Policyfiles Training | [Click Here](https://github.com/anthonygrees/policyfiles_training) |
 |   |   |   |
+|   |   |   |
 | 2  | `Day 2` - **InSpec Compliance** |  |
 |   | Introduction to InSpec Slides | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/slides/Introduction_to_InSpec_Training.pdf) |
 |   |   |   |
 | 2a  | InSpec - Part 1 InSpec from the Command Line (CLI)|  [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part1.md) |
 | 2b  | InSpec - Part 2 InSpec on Chef Automate with the Audit Cookbook|  [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part2.md) |
 |   |   |   |
-| 3  | `Setup` - Instructor Details | |
+|   |   |   |
+| 3  | `Setup` - **Instructor Details** | |
 |   | Follow this link to setup the environment and configure Chef Automate | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/setup.md) |
 
 

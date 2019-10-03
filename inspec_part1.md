@@ -35,6 +35,7 @@ Think about your current compliance process. For many teams, it can take weeks t
 
 | Item | Module  | Link  |
 | :---: |:-------------| :-----|
+| 0  | **Basics** - Lets look at the InSpec Basics| [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/basics_inspec.md)
 | 1a  | **Windows** - Learn InSpec on the Windows BJC workstation CLI | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/windows_inspec.md) |
 | 1b  | **Linux** - Learn InSpec from BJC against Linux node CLI | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/linux_inspec.md) |
 

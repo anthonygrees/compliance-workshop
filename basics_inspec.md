@@ -28,4 +28,4 @@ $ inspec supermarket info dev-sec/windows-baseline
 ```bash
 $ inspec supermarket exec dev-sec/windows-baseline
 ```
-![InSpec Version](/images/inspec_super_info.png)
+![InSpec Version](/images/inspec_super_exec.png)

@@ -173,6 +173,28 @@ $ inspec exec .
 ```
 ![Windows Version](/images/7http.png)
 
+####  You can also do Ranges
+
+```bash
+control 'PORT RANGE' do
+  impact 0.8
+  title 'This test checks the ports in a range'
+  
+  describe port.where { port > 0 && port < 21 } do
+    it { should_not be_listening }
+  end
+
+  describe port.where { port > 21 && port < 80 } do
+    it { should_not be_listening }
+  end
+
+  describe port.where { port > 80 && port < 443 } do
+    it { should_not be_listening }
+  end
+end
+  ```
+  
+
 ### Step 8: Check Windows Tasks
 Use the windows_task InSpec resource to check the state of tasks.
 

@@ -12,6 +12,12 @@
 | 2b  | **CentOS** - Instructions for reporting to Chef Automate | [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/dca_centos.md) |
 
 
+```
+
+
+The instructions below are now depricated.
+
+```
 
 
 

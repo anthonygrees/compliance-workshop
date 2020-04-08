@@ -3,7 +3,7 @@
 
 
 ### Part 2: InSpec on Chef Automate - Detect, Correct, Automate
-![ChefAutomate](/images/ChefAutomate.png)
+![ChefAutomate](/images/DCA-Cycle.png)
 
 
 | Item | Module  | Link  |

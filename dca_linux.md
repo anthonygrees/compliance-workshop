@@ -62,3 +62,46 @@ You can see the ```chef-client``` cookbook here - https://github.com/anthonygree
 
 
 #### 3. Add the CIS CentOS L1 InSpec Profile to you Node
+
+To add the CIS InSpec profile, we need to modify the ```base_linux``` policy.
+
+First, lets change the policy.
+```bash
+code C:\chef-repo\policyfiles\ap_policyfiles\base_linux.rb
+```
+
+The updated policy will look like this:
+```bash
+# base_linux.rb - Describe how you want Chef to build your system.
+#
+# For more information on the Policyfile feature, visit
+# https://github.com/opscode/chef-dk/blob/master/POLICYFILE_README.md
+# A name that describes what the system you're building with Chef does.
+
+name 'base_linux'
+
+# Where to find external cookbooks:
+default_source :chef_server, "https://#{ENV['AUTOMATE_HOSTNAME']}/organizations/#{ENV['CHEF_ORG']}"
+
+# Specify a custom source for a cookbook:
+cookbook 'chef-client', '~> 10.2.2' ## Stage 1 - Base
+cookbook 'audit_agr', '~> 2.2.4'  ## Stage 2 - Detect
+
+# run_list: chef-client will run these recipes in the order specified.
+
+run_list 'chef-client', 'audit_agr'  ## Stage 2
+```
+
+Now, lets update the policy
+```bash
+cd C:\chef-repo\policyfiles\ap_policyfiles
+
+chef update base_linux.rb
+```
+![update_policy](/images/update_policy_stage2.png)
+
+Finally, we need to push the policy to the Chef Server for the ```development``` Policy Group
+```bash
+chef push development base_linux.rb
+```
+![chef_push](/images/chef_push_stage2.png)

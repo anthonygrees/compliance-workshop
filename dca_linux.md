@@ -1,6 +1,6 @@
 ## CentOS - Detect, Correct, Automate
 
-The following instructions will be performed for the CentOS Detec, Correct, Automate Training Module
+The following instructions will be performed for the CentOS Detect, Correct and Automate Training Module
 
 
 #### 1. Use Kitchen to stand up and Bootstrap an Instance

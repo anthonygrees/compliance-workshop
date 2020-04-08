@@ -220,3 +220,6 @@ chef show-policy base_linux
 #### 6. Check InSpec report in Chef Automate
 
 Once hardening cookbook run is complete, you will see many fixes and the InSpec CIS profile will have little errors
+
+
+*** In Progress ***

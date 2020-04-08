@@ -26,7 +26,7 @@ The instructions below are now depricated.
 # Old Instructions
 
 ### Part 2: InSpec on Chef Automate with the Audit Cookbook
-![ChefAutomate](/images/ChefAutomate.png)
+
 
 
 | Item | Module  | Link  |

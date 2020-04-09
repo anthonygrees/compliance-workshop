@@ -5,7 +5,7 @@ The following instructions will be performed for the CentOS Detect, Correct and 
 
 #### 1. Use Kitchen to stand up and Bootstrap an Instance
 First, create a new CentOS VM using ```kitchen``` and bootstrap it to our Chef Infra Server.  It will be added to the:
-- ```linux_base``` Policy
+- ```base_linux``` Policy
 - ```development``` Policy Group
 
 Run the following commands:
@@ -29,7 +29,7 @@ kitchen converge
 You will see you new node in Chef Automate
 ![Linux_Bootstrap](/images/linux_bootstrap.png)
 
-#### 2. Lets take a look at the linux_base policy
+#### 2. Lets take a look at the base linux policy
 
 The policy is located at ``` C:\chef-repo\policyfiles\ap_policyfiles``` and you can view it with the following command:
 

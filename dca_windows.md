@@ -16,18 +16,18 @@ cd C:\chef-repo\cookbooks\bjc_windows_bootstrap
 code .
 ```
 
-In Visual Studio code, name you node in the ```default.rb``` on line 20 put your name in the variable and save the file
+In Visual Studio code, name you node in the ```default.rb``` on line 12 put your name in the variable and save the file
 ```bash
-YOUR_NAME='PUT_YOUR_NAME_HERE'
+Win-Anthony-{0}'
 ```
 
-Next, create your CentOS VM
+Next, create your Windows 2016 VM
 ```bash
 kitchen converge
 ```
 
 You will see your new node in Chef Automate
-![Linux_Bootstrap](/images/linux_bootstrap.png)
+![Win Bootstrap](/images/win_bootstrap.png)
 
 #### 2. Lets take a look at the base_windows policy
 
@@ -99,13 +99,13 @@ cd C:\chef-repo\policyfiles\ap_policyfiles
 
 chef update base_windows.rb
 ```
-![update_policy](/images/update_policy_stage2.png)
+![update_policy](/images/win_stage2_update.png)
 
 Finally, we need to push the policy to the Chef Server for the ```development``` Policy Group
 ```bash
 chef push development base_windows.rb
 ```
-![chef_push](/images/chef_push_stage2.png)
+![chef_push](/images/win_stage2_push.png)
 
 
 Let's check the Policy
@@ -149,8 +149,8 @@ default['audit']['profiles'] =
         compliance: 'admin/windows-baseline',
       },
       {
-        name: 'CIS Microsoft Windows Server 2012 R2 Benchmark Level 1 - Member Server',
-        compliance: 'admin/cis-windows2012r2-level1-memberserver',
+        name: 'CIS Microsoft Windows Server 2016 Benchmark Level 1 - Member Server',
+        compliance: 'admin/cis-windows2016-level1-memberserver',
       },
     ]
   when 'redhat'

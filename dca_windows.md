@@ -291,3 +291,10 @@ Second, let's check the InSpec run and see how the Compliance looks now.
 
 ![chef_push](/images/win_stage3_inspec.png)
 
+
+#### 7. Summary
+
+By applying the Chef Hardening cookbook, we have gone from ```231``` Level 1 CIS failures to ```38```.  (We cannot harden more than that or we lose connectivity with the Cloud Instance.
+
+
+

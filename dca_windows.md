@@ -180,13 +180,50 @@ sudo chef-client
 
 Your output will look like this:
 ```bash
+PS C:\Users\Administrator> chef-client
+Starting Chef Infra Client, version 15.9.17
+Using policy 'base_windows' at revision 'faf33352bfff878a6fdad20bd4f36490b1de4a918af224e65af60b0717b0160a'
+resolving cookbooks for run list: ["chef-client::default@10.2.2 (dc4a6af)", "audit_agr::default@2.2.4 (b18534e)"]
+Synchronizing Cookbooks:
+  - audit (9.1.0)
+  - audit_agr (2.2.4)
+  - chef-client (10.2.2)
+  - cron (6.3.0)
+  - logrotate (2.2.2)
+  - windows (7.0.0)
+Installing Cookbook Gems:
+Compiling Cookbooks...
+Recipe: audit::inspec
+  * inspec_gem[inspec] action install (up to date)
+  Converging 3 resources
+Recipe: chef-client::task
+  * windows_service[chef-client] action configure_startup (skipped due to only_if)
+  * chef_client_scheduled_task[Chef Client] action add
+    * directory[C:/chef/run] action create (up to date)
+    * directory[C:/chef/cache] action create (up to date)
+    * directory[C:/chef/backup] action create (up to date)
+    * directory[C:/chef/log] action create (up to date)
+    * directory[C:/chef] action create (up to date)
+    * windows_task[chef-client] action create (up to date)
+     (up to date)
+Recipe: audit::inspec
+  * inspec_gem[inspec] action nothing (skipped due to action :nothing)
 
-**** Get new output  ****
-
+Running handlers:
+[2020-04-09T11:32:37+00:00] WARN: Use of a hash array for the node['audit']['profiles'] is deprecated. Please refer to t
+he README and use a hash of hashes.
+[2020-04-09T11:33:33+00:00] WARN: DEPRECATION: InSpec Attributes are being renamed to InSpec Inputs to avoid confusion w
+ith Chef Attributes. Use :inputs in your kitchen.yml verifier config instead of :attributes.
+[2020-04-09T11:36:12+00:00] WARN: Compliance report size is 1.17 MB.
+  - Chef::Handler::AuditReport
+Running handlers complete
+Chef Infra Client finished, 0/10 resources updated in 05 minutes 18 seconds
+PS C:\Users\Administrator>
 ```
 
 Find your node in the ```Compliance``` tab in Chef Automate and see the InSpec Report
-![chef_push](/images/inspec_stage2.png)
+![chef_push](/images/win_stage2_inspec.png)
+
 
 #### 5. Remediate and Harden the CentOS  Node
 
@@ -227,13 +264,13 @@ cd C:\chef-repo\policyfiles\ap_policyfiles
 
 chef update base_windows.rb
 ```
-![update_policy](/images/update_policy_stage2.png)
+![update_policy](/images/win_stage3_update.png)
 
 Finally, we need to push the policy to the Chef Server for the ```development``` Policy Group
 ```bash
 chef push development base_windows.rb
 ```
-![chef_push](/images/chef_push_stage2.png)
+![chef_push](/images/win_stage3_push.png)
 
 
 Let's check the Policy
@@ -247,10 +284,10 @@ Once the ```cis-windows-ms-2016``` hardening cookbook run is complete, you will 
 
 First, let's check the Chef cookbook run of the ```cis-windows-ms-2016``` cookbook.  You can see each resource that was run to fix some of the CIS failues.
 
-![chef_push](/images/stage3_chef_run.png)
+![chef_push](/images/win_stage3_chef.png)
 
 
 Second, let's check the InSpec run and see how the Compliance looks now.
 
-![chef_push](/images/stage3_inspec.png)
+![chef_push](/images/win_stage3_inspec.png)
 

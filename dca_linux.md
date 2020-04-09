@@ -275,12 +275,14 @@ chef show-policy base_linux
 
 #### 6. Check InSpec report in Chef Automate
 
-Once hardening cookbook run is complete, you will see many fixes and the InSpec CIS profile will have little errors
+Once the ```cis-rhel``` hardening cookbook run is complete, you will see many fixes and the InSpec CIS profile will have little errors
 
 First, let's check the Chef cookbook run of the ```cis-rhel``` cookbook.  You can see each resource that was run to fix some of the CIS failues.
+
 ![chef_push](/images/stage3_chef_run.png)
 
 
 Second, let's check the InSpec run and see how the Compliance looks now.
+
 ![chef_push](/images/stage3_inspec.png)
 

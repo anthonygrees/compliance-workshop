@@ -112,6 +112,61 @@ Let's check the Policy
 chef show-policy base_linux
 ```
 
+The CIS InSpec profile is executed by the ```audit_agr``` cookbook.  It uses a ```case``` statement to determine what your OS is and which CIS profile to run.
+
+```bash
+default['audit']['fetcher'] = 'chef-server'
+default['audit']['reporter'] = 'chef-server-automate'
+default['audit']['profiles'] =
+  case node['platform']
+  when 'centos'
+    default['audit']['profiles'] = [
+      {
+        name: 'DevSec Linux Security Baseline',
+        compliance: 'admin/linux-baseline',
+      },
+      {
+        name: 'CIS CentOS Linux 7 Benchmark Level 1',
+        compliance: 'admin/cis-centos7-level1',
+      },
+    ]
+  when 'ubuntu'
+    default['audit']['profiles'] = [
+      {
+        name: 'DevSec Linux Security Baseline',
+        compliance: 'admin/linux-baseline',
+      },
+      {
+        name: 'CIS Ubuntu Linux 16.04 LTS Benchmark Level 1 - Server',
+        compliance: 'admin/cis-ubuntu16.04lts-level1-server',
+      },
+    ]
+  when 'windows'
+    default['audit']['profiles'] = [
+      {
+        name: 'DevSec Windows Security Baseline',
+        compliance: 'admin/windows-baseline',
+      },
+      {
+        name: 'CIS Microsoft Windows Server 2012 R2 Benchmark Level 1 - Member Server',
+        compliance: 'admin/cis-windows2012r2-level1-memberserver',
+      },
+    ]
+  when 'redhat'
+    default['audit']['profiles'] = [
+      {
+        name: 'DevSec Linux Security Baseline',
+        compliance: 'admin/linux-baseline',
+      },
+      {
+        name: 'CIS Red Hat Enterprise Linux 7 Benchmark Level 1 - Server',
+        compliance: 'admin/cis-rhel7-level1-server',
+      },
+    ]
+  end
+```
+
+
 #### 4. Check InSpec report in Chef Automate
 
 Your node is configured to run every 2 mins, but you can still manually force the ```chef-client``` to run and see the output if you impatient like me !!!
@@ -162,7 +217,7 @@ Running handlers complete
 Chef Infra Client finished, 0/15 resources updated in 12 seconds
 ```
 
-Find you node in the ```Compliance``` tab in Chef Automate and see the InSpec Report
+Find your node in the ```Compliance``` tab in Chef Automate and see the InSpec Report
 ![chef_push](/images/inspec_stage2.png)
 
 #### 5. Remediate and Harden the CentOS  Node
@@ -189,12 +244,13 @@ default_source :chef_server, "https://#{ENV['AUTOMATE_HOSTNAME']}/organizations/
 
 # Specify a custom source for a cookbook:
 cookbook 'chef-client', '~> 10.2.2' ## Stage 1 - Base
-cookbook 'audit_agr', '~> 2.2.4'  ## Stage 2 - Detect
-cookbook 'cis-rhel', '~> 6.6.6'  ## Stage 3 - Correct
+cookbook 'audit_agr', '~> 2.2.4' ## Stage 2 - Detect
+cookbook 'cis-rhel', '~> 0.3.1'  ## Stage 3 - Correct
 
 # run_list: chef-client will run these recipes in the order specified.
 
 run_list 'chef-client', 'audit_agr', 'cis-rhel'  ## Stage 3
+
 ```
 
 Now, lets update the policy
@@ -221,5 +277,10 @@ chef show-policy base_linux
 
 Once hardening cookbook run is complete, you will see many fixes and the InSpec CIS profile will have little errors
 
+First, let's check the Chef cookbook run of the ```cis-rhel``` cookbook.  You can see each resource that was run to fix some of the CIS failues.
+![chef_push](/images/stage3_chef_run.png)
 
-*** In Progress ***
+
+Second, let's check the InSpec run and see how the Compliance looks now.
+![chef_push](/images/stage3_inspec.png)
+

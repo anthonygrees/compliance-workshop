@@ -3,7 +3,6 @@
 
 
 ### Part 2: InSpec on Chef Automate - Detect, Correct, Automate
-![ChefAutomate](/images/DCA-Cycle.png)
 
 #### About InSpec
 InSpec is an open-source testing framework by Chef that enables you to specify compliance, security, and other policy requirements.

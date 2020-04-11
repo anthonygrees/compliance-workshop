@@ -274,11 +274,21 @@ Let's check the Policy
 chef show-policy base_linux
 ```
 
-#### 6. Check InSpec report in Chef Automate
+#### 6. Time Sync Error
 
 Once the ```cis-rhel``` hardening cookbook run is complete, you will see many fixes and the InSpec CIS profile will have little errors
 
-First, let's check the Chef cookbook run of the ```cis-rhel``` cookbook.  You can see each resource that was run to fix some of the CIS failues.
+You may see an error with the ```time_sync``` recipe and an error in your ```kitchen``` run like this:
+```bash
+STDERR: Job for chronyd.service failed because a timeout was exceeded. See "systemctl status chronyd.service" and "journalctl -xe" for details.
+```
+
+You can see the stack trace in Chef Automate.
+![stack trace](/images/stack_trace.png)
+
+#### 7. Check InSpec report in Chef Automate
+
+To see the result of your hardening, first, let's check the Chef cookbook run of the ```cis-rhel``` cookbook.  You can see each resource that was run to fix some of the CIS failues.
 
 ![chef_push](/images/stage3_chef_run.png)
 

@@ -1,4 +1,4 @@
-![Linux](/images/linux.png) ![inspec](/images/inspec.png)
+![Linux](/images/linux.png) 
 ## CentOS - Detect, Correct, Automate
 
 The following instructions will be performed for the CentOS Detect, Correct and Automate Training Module

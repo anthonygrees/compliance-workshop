@@ -1,3 +1,4 @@
+![Win](/images/microsoft.png)
 ## Windows - Detect, Correct, Automate
 
 The following instructions will be performed for the Windows Detect, Correct and Automate Training Module

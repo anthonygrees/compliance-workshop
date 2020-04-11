@@ -132,39 +132,30 @@ default['audit']['profiles'] =
         compliance: 'admin/cis-centos7-level1',
       },
     ]
-  when 'ubuntu'
-    default['audit']['profiles'] = [
-      {
-        name: 'DevSec Linux Security Baseline',
-        compliance: 'admin/linux-baseline',
-      },
-      {
-        name: 'CIS Ubuntu Linux 16.04 LTS Benchmark Level 1 - Server',
-        compliance: 'admin/cis-ubuntu16.04lts-level1-server',
-      },
-    ]
   when 'windows'
-    default['audit']['profiles'] = [
-      {
-        name: 'DevSec Windows Security Baseline',
-        compliance: 'admin/windows-baseline',
-      },
-      {
-        name: 'CIS Microsoft Windows Server 2016 Benchmark Level 1 - Member Server',
-        compliance: 'admin/cis-windows2016-level1-memberserver',
-      },
-    ]
-  when 'redhat'
-    default['audit']['profiles'] = [
-      {
-        name: 'DevSec Linux Security Baseline',
-        compliance: 'admin/linux-baseline',
-      },
-      {
-        name: 'CIS Red Hat Enterprise Linux 7 Benchmark Level 1 - Server',
-        compliance: 'admin/cis-rhel7-level1-server',
-      },
-    ]
+    case  node['platform_version']
+      when /^10/ # 2016
+        default['audit']['profiles'] = [
+          {
+           name: 'DevSec Windows Security Baseline',
+           compliance: 'admin/windows-baseline',
+         },
+          {
+           name: 'CIS Microsoft Windows Server 2016 RTM (Release 1607) Benchmark Level 1 - Member Server',
+           compliance: 'admin/cis-windows2016rtm-release1607-level1-memberserver',
+         },
+        ]
+      when /^6.3/ # 2012R2
+        default['audit']['profiles'] = [
+          {
+           name: 'DevSec Windows Security Baseline',
+           compliance: 'admin/windows-baseline',
+         },
+          {
+           name: 'CIS Microsoft Windows Server 2012 R2 Benchmark Level 1 - Member Server',
+           compliance: 'admin/cis-windows2012r2-level1-memberserver',
+         },
+        ]
   end
 ```
 

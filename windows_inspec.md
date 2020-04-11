@@ -275,7 +275,7 @@ Note: Remember to update the ```json``` and put your name in ```"node_name" : "<
     "reporter" : {
         "automate" : {
             "stdout" : "false",
-            "url" : "https://automate.automate-demo.com/data-collector/v0",
+            "url" : "https://anthony-a2.chef-demo.com/data-collector/v0",
             "token" : "g_ji1WBwpJiryy4h1nR4yVP21yU=",
             "insecure" : true,
             "node_name" : "<YOUR_NAME_HERE_win_cli>",

@@ -276,7 +276,7 @@ Note: Remember to update the ```json``` and put your name in ```"node_name" : "<
         "automate" : {
             "stdout" : "false",
             "url" : "https://anthony-a2.chef-demo.com/data-collector/v0",
-            "token" : "Uwj93e-z5_orVpPgeXZWAPo6-j8=",
+            "token" : "e05da1DwQ1w0Zpk6Pijj7M6isks=",
             "insecure" : true,
             "node_name" : "<YOUR_NAME_HERE_win_cli>",
             "node_uuid" : "12345678-1234-1234-1234-123456789012",

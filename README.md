@@ -19,6 +19,7 @@ Instructions for students attending Day 1 Chef Infra training and Day 2 training
 |   |   |   |
 | 2a  | InSpec - Part 1 InSpec from the Command Line (CLI)|  [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part1.md) |
 | 2b  | InSpec - Part 2 InSpec on Chef Automate - Detect, Correct, Automate ! |  [Click Here](https://github.com/anthonygrees/compliance-workshop/blob/master/inspec_part2.md) |
+| 2c | InSpec - Part 3 InSpec on AWS, GCP and Azure | [Click Here](https://github.com/chef-cft/inspec-remote-scanning) |
 |   |   |   |
 |   |   |   |
 | 3  | `Setup` - **Instructor Details** | |
